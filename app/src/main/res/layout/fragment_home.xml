@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:layout_marginBottom="1dp"
+        android:id="@+id/fragment_home_linearlayout_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/colorWhite"
+        android:gravity="center"
+        android:orientation="horizontal"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/fragment_home_iv_logo"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|end"
+            android:src="@drawable/yogiyo_logo" />
+
+        <TextView
+            android:id="@+id/fragment_home_tv_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@color/colorBlack"
+            android:textSize="18dp"
+            android:text="정자동 192" />
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@color/colorBlack"
+            android:textSize="7dp"
+            android:text="▼" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/fragment_home_view_space1"
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:background="@color/colorGrey1"
+        app:layout_constraintTop_toBottomOf="@id/fragment_home_linearlayout_top_bar"
+        />
+
+    <LinearLayout
+        android:id="@+id/fragment_home_linearlayout_advertise"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/fragment_home_view_space1"
+        android:orientation="horizontal">
+        <ViewFlipper
+            android:id="@+id/fragment_home_viewflipper_advertise"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -51,19 +51,46 @@
         app:layout_constraintTop_toBottomOf="@id/fragment_home_linearlayout_top_bar"
         />
 
+    <ScrollView
+        android:id="@+id/fragment_home_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/fragment_home_view_space1"
+        android:orientation="vertical">
+
+<RelativeLayout
+    android:id="@+id/fragment_home_relativelayout_in_scrollview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <LinearLayout
         android:id="@+id/fragment_home_linearlayout_advertise"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/fragment_home_view_space1"
         android:orientation="horizontal">
         <ViewFlipper
             android:id="@+id/fragment_home_viewflipper_advertise"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             />
-
     </LinearLayout>
+
+    <View
+        android:id="@+id/fragment_home_view_space2"
+        android:layout_width="match_parent"
+        android:layout_height="7dp"
+        android:background="@color/colorGrey3"
+        android:layout_below="@id/fragment_home_linearlayout_advertise"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/fragment_home_recyclerview_category_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fragment_home_view_space2"
+        />
+
+    </RelativeLayout>
+    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

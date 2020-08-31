@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginRight="7dp">
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/fragment_home_recyclerview_store_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/fragment_home_mytaste1" />
+
+        <LinearLayout
+        android:id="@+id/fragment_home_recyclerview_linearlayout_sub_info_favorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:background="@color/colorRed"
+        android:visibility="invisible">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" ♡ "
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/fragment_home_recyclerview_sub_info_favorite_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"
+        android:text="180"
+        />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorWhite"
+            android:text="  "
+            />
+</LinearLayout>
+        <LinearLayout
+            android:id="@+id/fragment_home_recyclerview_linearlayout_sub_info_discount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="horizontal"
+            android:background="@color/colorRed"
+            android:visibility="invisible"
+            >
+            <TextView
+                android:id="@+id/fragment_home_recyclerview_sub_info_discount_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="배달할인 4,000원"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold"/>
+        </LinearLayout>
+    </FrameLayout>
+    <TextView
+        android:id="@+id/fragment_home_recyclerview_storename_tv"
+        android:layout_marginTop="2dp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:text="바르다김선생-분당정자신기사거리점"
+        android:textSize="18dp"
+        android:textColor="@color/colorBlack"
+        />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="★"
+            android:textSize="16dp"
+            android:textColor="@color/colorStar"
+            />
+        <TextView
+            android:id="@+id/fragment_home_recyclerview_rating_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4.1"
+            android:textStyle="bold"
+            android:textColor="@color/colorBlack"
+            android:textSize="15dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ㆍ"
+            android:textSize="18dp"
+            android:padding="-20dp"
+            android:textStyle="bold"
+            android:textColor="@color/colorGrey1"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="리뷰"
+            android:textSize="15dp"/>
+        <TextView
+            android:id="@+id/fragment_home_recyclerview_review_count_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="133"
+            android:textSize="15dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/fragment_home_recyclerview_additional_info"
+        android:layout_width="145dp"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textSize="13dp"
+        android:text="바른 김밥, 가락 떢볶이"
+        />
+
+
+</LinearLayout>

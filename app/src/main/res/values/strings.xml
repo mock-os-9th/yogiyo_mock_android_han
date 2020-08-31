@@ -6,4 +6,20 @@
     <string name="network_error">네트워크 연결이 원활하지 않습니다.</string>
     <string name="positive">네</string>
     <string name="negative">아니오</string>
+
+    <string name="categorytop_menu1">전체보기</string>
+    <string name="categorytop_menu2">1인분주문</string>
+    <string name="categorytop_menu3">요기요플러스</string>
+    <string name="categorytop_menu4">치킨</string>
+    <string name="categorytop_menu5">중국집</string>
+    <string name="categorytop_menu6">피자/양식</string>
+    <string name="categorytop_menu7">한식</string>
+    <string name="categorytop_menu8">분식</string>
+    <string name="categorytop_menu9">카페/디저트</string>
+    <string name="categorytop_menu10">족발/보쌈</string>
+    <string name="categorytop_menu11">일식/돈까스</string>
+    <string name="categorytop_menu12">야식</string>
+    <string name="categorytop_menu13">프랜차이즈</string>
+    <string name="categorytop_menu14">편의점/마트</string>
+    <string name="categorytop_menu15">테이크아웃</string>
 </resources>

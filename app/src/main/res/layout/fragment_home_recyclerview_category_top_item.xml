@@ -16,6 +16,7 @@
         android:layout_height="60dp"
         android:scaleType="fitXY"
         android:src="@drawable/fragmenthome_menu_category2"
+
         />
     <TextView
         android:id="@+id/fragment_home_recyclerview_category_top_item_tv"

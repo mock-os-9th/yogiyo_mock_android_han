@@ -17,7 +17,7 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="n">
-        <activity android:name=".src.main.MainActivity"
+        <activity android:name=".src.splash.SplashActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,6 +28,8 @@
         <activity android:name=".src.addressoption.AddressMainActivity"
             android:screenOrientation="portrait"></activity>
         <activity android:name=".src.FoodCategory.FoodCategoryMainActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".src.main.MainActivity"
             android:screenOrientation="portrait"></activity>
     </application>
 

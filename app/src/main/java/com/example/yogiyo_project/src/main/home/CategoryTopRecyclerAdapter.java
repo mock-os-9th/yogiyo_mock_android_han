@@ -62,6 +62,14 @@ public class CategoryTopRecyclerAdapter extends RecyclerView.Adapter<CategoryTop
 
         holder.ivMenu.setImageDrawable(item.getmDrawableMenu());
         holder.tvMenu.setText(item.getmStringMenu());
+       holder.ivMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            Intent intent = new Intent(holder.itemView.getContext(), FoodCategoryMainActivity.class);
+            holder.itemView.getContext().startActivity(intent);
+
+            }
+        });
 
     }
 
@@ -82,7 +90,7 @@ public class CategoryTopRecyclerAdapter extends RecyclerView.Adapter<CategoryTop
             ivMenu = itemView.findViewById(R.id.fragment_home_recyclerview_category_top_item_iv);
             tvMenu = itemView.findViewById(R.id.fragment_home_recyclerview_category_top_item_tv);
 
-            itemView.setOnClickListener(new View.OnClickListener() {
+            ivMenu.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     int pos = getAdapterPosition();

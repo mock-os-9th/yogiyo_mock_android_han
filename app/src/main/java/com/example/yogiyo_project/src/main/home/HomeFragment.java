@@ -14,6 +14,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -35,7 +37,7 @@ public class HomeFragment extends Fragment {
 
     //그림 메뉴 카테고리 위한 변수
     RecyclerView mRecyclerViewCategoryTop;
-    CategoryTopRecyclerAdapter mAdapterCategoryTop;
+  CategoryTopRecyclerAdapter mAdapterCategoryTop;
     ArrayList<CategoryTopRecyclerData> mListCategoryTop = new ArrayList<>();
 
     //나의 입맛 저격!
@@ -48,7 +50,8 @@ public class HomeFragment extends Fragment {
     StoreRecyclerAdapter2 mAdapterStore2;
     ArrayList<StoreRecyclerData> mListStore2 = new ArrayList<>();
 
-
+    private FragmentManager mFragmentManager;
+    private FragmentTransaction mFragmentTransaction;
 
 
     @Nullable
@@ -103,12 +106,19 @@ public class HomeFragment extends Fragment {
 
         mAdapterCategoryTop.setOnItemClickListener(new CategoryTopRecyclerAdapter.OnItemClickListener(){
 
+            @Override
+            public void onItemClick(View v, int position) {
+
+            }
+        });
+       /* mAdapterCategoryTop.setOnItemClickListener(new CategoryTopRecyclerAdapter.OnItemClickListener(){
+
         @Override
         public void onItemClick(View v, int position) {
                 MainActivity mainActivity = new MainActivity();
                 mainActivity.setFrag(5);
         }
-    });
+    });*/
 
         //상단 음식 그림 카테고리 리사이클러 끝
 
@@ -132,6 +142,7 @@ public class HomeFragment extends Fragment {
                 "4.1", "133","바른 김밥, 가락 떡볶이");
         mAdapterStore.notifyDataSetChanged();
         //나의 입맛 저격! 리사이클러뷰 - 끝
+
 
         //우리동네 찜 많은 음식점 리사이클러 뷰
         mRecyclerViewStore2 = mView.findViewById(R.id.fragment_home_recyclerview_favorite_lot);

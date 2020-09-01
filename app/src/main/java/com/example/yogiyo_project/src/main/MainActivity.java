@@ -8,10 +8,12 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.example.yogiyo_project.R;
 import com.example.yogiyo_project.src.main.favorite.FavoriteFragment;
 import com.example.yogiyo_project.src.main.foodcategory.FoodCategoryFragment;
+import com.example.yogiyo_project.src.main.home.CategoryTopRecyclerAdapter;
 import com.example.yogiyo_project.src.main.home.HomeFragment;
 import com.example.yogiyo_project.src.main.myYogiyo.MyYogiyoFragment;
 import com.example.yogiyo_project.src.main.orderList.OrderListFragment;
@@ -20,22 +22,25 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private HomeFragment mHomeFragment;
-    private FavoriteFragment mFavoriteFragment;
-    private SearchFragment mSearchFragment;
-    private OrderListFragment mOrderListFragment;
-    private MyYogiyoFragment mMyYogiyoFragment;
-    private FoodCategoryFragment mFoodCategoryFragment;
+    private  HomeFragment mHomeFragment;
+    private  FavoriteFragment mFavoriteFragment;
+    private  SearchFragment mSearchFragment;
+    private  OrderListFragment mOrderListFragment;
+    private  MyYogiyoFragment mMyYogiyoFragment;
+    private  FoodCategoryFragment mFoodCategoryFragment;
 
     private BottomNavigationView mBottomNavigationView;
-    private FragmentManager mFragmentManager;
-    private FragmentTransaction mFragmentTransaction;
+    private  FragmentManager mFragmentManager;
+    private  FragmentTransaction mFragmentTransaction;
+
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         mHomeFragment = new HomeFragment();
         mFavoriteFragment = new FavoriteFragment();
@@ -71,7 +76,17 @@ public class MainActivity extends AppCompatActivity {
 
             setFrag(0); //시작 시 자동으로 홈 화면 선택
 
+     /* mAdapterCategoryTop.setOnItemClickListener(new CategoryTopRecyclerAdapter.OnItemClickListener(){
+
+            @Override
+            public void onItemClick(View v, int position) {
+                setFrag(5);
+            }
+        }); */
+
     }
+
+
 
     public void setFrag(int n){
         mFragmentManager = getSupportFragmentManager();

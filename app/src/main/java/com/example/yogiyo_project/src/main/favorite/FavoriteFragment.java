@@ -12,13 +12,13 @@ import androidx.fragment.app.Fragment;
 import com.example.yogiyo_project.R;
 
 public class FavoriteFragment extends Fragment {
-    View view;
+    View mView;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view =inflater.inflate(R.layout.fragment_favorite, container, false);
+        mView =inflater.inflate(R.layout.fragment_favorite, container, false);
 
-        return view;
+        return mView;
     }
 }

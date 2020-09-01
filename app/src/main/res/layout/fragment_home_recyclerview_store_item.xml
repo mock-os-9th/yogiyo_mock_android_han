@@ -17,12 +17,12 @@
             android:src="@drawable/fragment_home_mytaste1" />
 
         <LinearLayout
-        android:id="@+id/fragment_home_recyclerview_linearlayout_sub_info_favorite"
+        android:id="@+id/fragment_home_recyclerview_sub_info_favorite_linearlayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:orientation="horizontal"
-        android:background="@color/colorRed"
+        android:background="@color/colorRed2"
         android:visibility="invisible">
         <TextView
             android:layout_width="wrap_content"
@@ -46,7 +46,7 @@
             />
 </LinearLayout>
         <LinearLayout
-            android:id="@+id/fragment_home_recyclerview_linearlayout_sub_info_discount"
+            android:id="@+id/fragment_home_recyclerview_sub_info_discount_linearlayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"

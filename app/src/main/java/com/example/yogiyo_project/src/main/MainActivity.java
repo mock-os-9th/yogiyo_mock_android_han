@@ -11,6 +11,7 @@ import android.view.MenuItem;
 
 import com.example.yogiyo_project.R;
 import com.example.yogiyo_project.src.main.favorite.FavoriteFragment;
+import com.example.yogiyo_project.src.main.foodcategory.FoodCategoryFragment;
 import com.example.yogiyo_project.src.main.home.HomeFragment;
 import com.example.yogiyo_project.src.main.myYogiyo.MyYogiyoFragment;
 import com.example.yogiyo_project.src.main.orderList.OrderListFragment;
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private SearchFragment mSearchFragment;
     private OrderListFragment mOrderListFragment;
     private MyYogiyoFragment mMyYogiyoFragment;
+    private FoodCategoryFragment mFoodCategoryFragment;
 
     private BottomNavigationView mBottomNavigationView;
     private FragmentManager mFragmentManager;
@@ -40,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         mSearchFragment = new SearchFragment();
         mOrderListFragment = new OrderListFragment();
         mMyYogiyoFragment = new MyYogiyoFragment();
+        mFoodCategoryFragment = new FoodCategoryFragment();
 
         mBottomNavigationView = (BottomNavigationView) findViewById(R.id.main_bottom_navigationview);
         mBottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -69,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
             setFrag(0); //시작 시 자동으로 홈 화면 선택
 
     }
+
     public void setFrag(int n){
         mFragmentManager = getSupportFragmentManager();
         mFragmentTransaction = mFragmentManager.beginTransaction();
@@ -92,6 +96,10 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case 4:
                 mFragmentTransaction.replace(R.id.main_framelayout, mMyYogiyoFragment);
+                mFragmentTransaction.commit();
+                break;
+            case 5:
+                mFragmentTransaction.replace(R.id.main_framelayout, mFoodCategoryFragment);
                 mFragmentTransaction.commit();
                 break;
         }

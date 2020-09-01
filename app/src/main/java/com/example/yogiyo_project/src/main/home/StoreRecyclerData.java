@@ -8,6 +8,7 @@ public class StoreRecyclerData {
     private String mStringStoreRating;
     private String mStringReviewCount;
     private String mStringAdditionalInfo;
+    private String mStringSubInfoFavorite;
 
     public Drawable getmDrawableStore() {
         return mDrawableStore;
@@ -47,5 +48,13 @@ public class StoreRecyclerData {
 
     public void setmStringAdditionalInfo(String mStringAdditionalInfo) {
         this.mStringAdditionalInfo = mStringAdditionalInfo;
+    }
+
+    public String getmStringSubInfoFavorite() {
+        return mStringSubInfoFavorite;
+    }
+
+    public void setmStringSubInfoFavorite(String mStringSubInfoFavorite) {
+        this.mStringSubInfoFavorite = mStringSubInfoFavorite;
     }
 }

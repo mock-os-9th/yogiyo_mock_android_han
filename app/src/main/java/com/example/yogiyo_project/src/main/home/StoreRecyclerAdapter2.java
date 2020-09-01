@@ -45,7 +45,8 @@ public class StoreRecyclerAdapter2 extends RecyclerView.Adapter<StoreRecyclerAda
         holder.tvStoreRating.setText(item.getmStringStoreRating());
         holder.tvStoreReviewCount.setText(item.getmStringReviewCount());
         holder.tvStoreAdditionalInfo.setText(item.getmStringAdditionalInfo());
-        holder.linearLayoutSubInfoDiscount.setVisibility(View.VISIBLE);
+        holder.linearLayoutSubInfoFavorite.setVisibility(View.VISIBLE);
+        holder.tvStoreSubInfo.setText(item.getmStringSubInfoFavorite());
     }
 
     @Override
@@ -59,8 +60,8 @@ public class StoreRecyclerAdapter2 extends RecyclerView.Adapter<StoreRecyclerAda
         TextView tvStoreRating;
         TextView tvStoreReviewCount;
         TextView tvStoreAdditionalInfo;
-        LinearLayout linearLayoutSubInfoDiscount;
-
+        LinearLayout linearLayoutSubInfoFavorite;
+        TextView tvStoreSubInfo;
 
         public StoreRecyclerViewHolder2(@NonNull View itemView) {
             super(itemView);
@@ -70,7 +71,8 @@ public class StoreRecyclerAdapter2 extends RecyclerView.Adapter<StoreRecyclerAda
             tvStoreRating = itemView.findViewById(R.id.fragment_home_recyclerview_rating_tv);
             tvStoreReviewCount = itemView.findViewById(R.id.fragment_home_recyclerview_review_count_tv);
             tvStoreAdditionalInfo = itemView.findViewById(R.id.fragment_home_recyclerview_additional_info);
-            linearLayoutSubInfoDiscount = itemView.findViewById(R.id.fragment_home_recyclerview_linearlayout_sub_info_discount);
+            linearLayoutSubInfoFavorite = itemView.findViewById(R.id.fragment_home_recyclerview_sub_info_favorite_linearlayout);
+            tvStoreSubInfo = itemView.findViewById(R.id.fragment_home_recyclerview_sub_info_favorite_tv);
         }
     }
 }

@@ -85,7 +85,7 @@ public class HomeFragment extends Fragment {
         mRecyclerViewCategoryTop.setLayoutManager(gridLayoutManagerCategoryTop);
 
         addItemCategoryTop(ContextCompat.getDrawable(mView.getContext(), R.drawable.fragmenthome_menu_category1), "전체보기");
-        addItemCategoryTop(ContextCompat.getDrawable(mView.getContext(), R.drawable.fragmenthome_menu_category2), "1인분주문");
+        addItemCategoryTop(ContextCompat.getDrawable(mView.getContext(), R.drawable.fragmenthome_menu_category15), "테이크아웃");
         addItemCategoryTop(ContextCompat.getDrawable(mView.getContext(), R.drawable.fragmenthome_menu_category3), "요기요플러스");
         addItemCategoryTop(ContextCompat.getDrawable(mView.getContext(), R.drawable.fragmenthome_menu_category4), "치킨");
         addItemCategoryTop(ContextCompat.getDrawable(mView.getContext(), R.drawable.fragmenthome_menu_category5), "중국집");
@@ -93,13 +93,23 @@ public class HomeFragment extends Fragment {
         addItemCategoryTop(ContextCompat.getDrawable(mView.getContext(), R.drawable.fragmenthome_menu_category7), "한식");
         addItemCategoryTop(ContextCompat.getDrawable(mView.getContext(), R.drawable.fragmenthome_menu_category8), "분식");
         addItemCategoryTop(ContextCompat.getDrawable(mView.getContext(), R.drawable.fragmenthome_menu_category9), "카페/디저트");
-        addItemCategoryTop(ContextCompat.getDrawable(mView.getContext(), R.drawable.fragmenthome_menu_category10), "족발/보쌈");
+        addItemCategoryTop(ContextCompat.getDrawable(mView.getContext(), R.drawable.fragmenthome_menu_category2), "1인분주문");
         addItemCategoryTop(ContextCompat.getDrawable(mView.getContext(), R.drawable.fragmenthome_menu_category11), "일식/돈까스");
-        addItemCategoryTop(ContextCompat.getDrawable(mView.getContext(), R.drawable.fragmenthome_menu_category12), "야식");
+        addItemCategoryTop(ContextCompat.getDrawable(mView.getContext(), R.drawable.fragmenthome_menu_category10), "족발/보쌈");
         addItemCategoryTop(ContextCompat.getDrawable(mView.getContext(), R.drawable.fragmenthome_menu_category13), "프랜차이즈");
+        addItemCategoryTop(ContextCompat.getDrawable(mView.getContext(), R.drawable.fragmenthome_menu_category12), "야식");
         addItemCategoryTop(ContextCompat.getDrawable(mView.getContext(), R.drawable.fragmenthome_menu_category14), "편의점/마트");
-        addItemCategoryTop(ContextCompat.getDrawable(mView.getContext(), R.drawable.fragmenthome_menu_category15), "테이크아웃");
         mAdapterCategoryTop.notifyDataSetChanged();
+
+        mAdapterCategoryTop.setOnItemClickListener(new CategoryTopRecyclerAdapter.OnItemClickListener(){
+
+        @Override
+        public void onItemClick(View v, int position) {
+                MainActivity mainActivity = new MainActivity();
+                mainActivity.setFrag(5);
+        }
+    });
+
         //상단 음식 그림 카테고리 리사이클러 끝
 
 
@@ -128,8 +138,18 @@ public class HomeFragment extends Fragment {
         mAdapterStore2 = new StoreRecyclerAdapter2(getActivity(), mListStore2);
         mRecyclerViewStore2.setAdapter(mAdapterStore2);
 
-        addItemStoreMyTaste(ContextCompat.getDrawable(mView.getContext(), R.drawable.fragment_home_mytaste1), "바르다김선생-분당정자신기사거리점",
-                "4.1", "133","바른 김밥, 가락 떡볶이");
+        LinearLayoutManager linearLayoutManagerStore2 = new LinearLayoutManager(getContext());
+        linearLayoutManagerStore2.setOrientation(LinearLayoutManager.HORIZONTAL);
+        mRecyclerViewStore2.setLayoutManager(linearLayoutManagerStore2);
+
+        addItemStoreFavoriteLot(ContextCompat.getDrawable(mView.getContext(), R.drawable.fragment_home_mytaste1), "바르다김선생-분당정자신기사거리점",
+                "4.1", "133","바른 김밥, 가락 떡볶이","123");
+        addItemStoreFavoriteLot(ContextCompat.getDrawable(mView.getContext(), R.drawable.fragment_home_mytaste1), "바르다김선생-분당정자신기사거리점",
+                "4.1", "133","바른 김밥, 가락 떡볶이", "123");
+        addItemStoreFavoriteLot(ContextCompat.getDrawable(mView.getContext(), R.drawable.fragment_home_mytaste1), "바르다김선생-분당정자신기사거리점",
+                "4.1", "133","바른 김밥, 가락 떡볶이", "123");
+        addItemStoreFavoriteLot(ContextCompat.getDrawable(mView.getContext(), R.drawable.fragment_home_mytaste1), "바르다김선생-분당정자신기사거리점",
+                "4.1", "133","바른 김밥, 가락 떡볶이", "123");
         mAdapterStore2.notifyDataSetChanged();
 
 
@@ -188,6 +208,24 @@ public class HomeFragment extends Fragment {
 
         mListStore.add(item);
 
+
     }
+    //우리동네 찜 많은 음식점  리사이클러뷰 아이템 추가
+    public void addItemStoreFavoriteLot(Drawable drawableStoreFavorite, String storeNameFavorite, String storeRatingFavorite
+            , String reviewCountFavorite, String additionalInfoFavorite, String subInfoFavorite){
+        StoreRecyclerData item = new StoreRecyclerData();
+
+        item.setmDrawableStore(drawableStoreFavorite);
+        item.setmStringStoreName(storeNameFavorite);
+        item.setmStringStoreRating(storeRatingFavorite);
+        item.setmStringReviewCount(reviewCountFavorite);
+        item.setmStringAdditionalInfo(additionalInfoFavorite);
+        item.setmStringSubInfoFavorite(subInfoFavorite);
+
+
+        mListStore2.add(item);
+
+    }
+
 
 }

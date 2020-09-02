@@ -65,8 +65,11 @@ public class CategoryTopRecyclerAdapter extends RecyclerView.Adapter<CategoryTop
        holder.ivMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-            Intent intent = new Intent(holder.itemView.getContext(), FoodCategoryMainActivity.class);
-            holder.itemView.getContext().startActivity(intent);
+
+           Intent intent = new Intent(holder.itemView.getContext(), FoodCategoryMainActivity.class);
+           holder.itemView.getContext().startActivity(intent);
+
+               // MainActivity.setFrag(5);
 
             }
         });

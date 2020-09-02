@@ -30,8 +30,8 @@ public class MainActivity extends AppCompatActivity {
     private  FoodCategoryFragment mFoodCategoryFragment;
 
     private BottomNavigationView mBottomNavigationView;
-    private  FragmentManager mFragmentManager;
-    private  FragmentTransaction mFragmentTransaction;
+    private static FragmentManager mFragmentManager;
+    private static FragmentTransaction mFragmentTransaction;
 
 
 
@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mFragmentManager = getSupportFragmentManager();
 
 
         mHomeFragment = new HomeFragment();
@@ -76,20 +77,12 @@ public class MainActivity extends AppCompatActivity {
 
             setFrag(0); //시작 시 자동으로 홈 화면 선택
 
-     /* mAdapterCategoryTop.setOnItemClickListener(new CategoryTopRecyclerAdapter.OnItemClickListener(){
-
-            @Override
-            public void onItemClick(View v, int position) {
-                setFrag(5);
-            }
-        }); */
 
     }
 
 
 
-    public void setFrag(int n){
-        mFragmentManager = getSupportFragmentManager();
+    /*static*/ public void setFrag(int n){   //setfrag5 위해서 static으로 하면 프래먼트 간 이동방식으로 가능 하지만 static 좋지 않으므로 우선 액티비티 이동으로 하기
         mFragmentTransaction = mFragmentManager.beginTransaction();
 
         switch(n) {

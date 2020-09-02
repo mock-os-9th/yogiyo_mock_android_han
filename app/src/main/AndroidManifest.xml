@@ -33,6 +33,8 @@
             android:screenOrientation="portrait"></activity>
         <activity android:name=".src.login.LoginMainActivity"
             android:screenOrientation="portrait"></activity>
+        <activity android:name=".src.signup.SignUpMainActivity"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

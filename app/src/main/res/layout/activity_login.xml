@@ -41,6 +41,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:paddingVertical="10dp"
+        android:singleLine="true"
         android:hint="  이메일 주소 입력"/>
     <EditText
         android:layout_marginTop="10dp"
@@ -52,6 +53,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:paddingVertical="10dp"
+        android:singleLine="true"
         android:hint="  비밀번호 입력"/>
 
     <RelativeLayout
@@ -64,7 +66,8 @@
             android:id="@+id/activity_login_autologin_checkbox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"/>
+            android:layout_marginLeft="5dp"
+            />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -112,4 +115,76 @@
         android:textColor="@color/colorWhite"
         android:textSize="20dp"
         android:background="@color/colorGrey2"/>
+
+    <LinearLayout
+        android:layout_below="@id/activity_login_tv_loginbtn"
+        android:id="@+id/activity_login_linearlayout_social_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="25dp"
+       >
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/view_outline1"
+        android:paddingVertical="17dp"
+        android:paddingHorizontal="22dp">
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/naver_capture"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="네이버로 로그인"
+            android:layout_marginLeft="7dp"
+            android:textSize="16dp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/view_outline1"
+            android:paddingVertical="17dp"
+            android:paddingHorizontal="22dp">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/kakao_capture"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="카카오로 로그인"
+                android:layout_marginLeft="7dp"
+                android:textSize="16dp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/activity_login_linearlayout_social_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="요기요가 처음이신가요?"/>
+        <TextView
+            android:id="@+id/activity_login_tv_goto_signup"
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="이메일 회원가입"
+            android:textColor="@color/colorRed"/>
+
+    </LinearLayout>
+
 </RelativeLayout>

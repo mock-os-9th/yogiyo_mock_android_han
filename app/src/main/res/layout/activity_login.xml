@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_marginBottom="1dp"
+        android:id="@+id/activity_login_relativelayout_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/colorWhite"
+        android:orientation="horizontal"
+        >
+
+        <ImageView
+            android:id="@+id/activity_login_iv_closeicon"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_gravity="center_vertical|end"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_baseline_clear_24"
+            android:layout_centerVertical="true"/>
+
+    </RelativeLayout>
+    <ImageView
+        android:id="@+id/activity_login_iv_yogiyo_logo"
+        android:layout_marginTop="10dp"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:scaleType="fitXY"
+        android:layout_below="@id/activity_login_relativelayout_top_bar"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/yogiyo_logo"/>
+    <EditText
+        android:id="@+id/activity_login_tv_input_email"
+        android:layout_below="@id/activity_login_iv_yogiyo_logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/view_outline1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:paddingVertical="10dp"
+        android:hint="  이메일 주소 입력"/>
+    <EditText
+        android:layout_marginTop="10dp"
+        android:id="@+id/activity_login_tv_input_password"
+        android:layout_below="@id/activity_login_tv_input_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/view_outline1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:paddingVertical="10dp"
+        android:hint="  비밀번호 입력"/>
+
+    <RelativeLayout
+        android:layout_marginTop="10dp"
+        android:id="@+id/activity_login_relativelayout_login_option_find"
+        android:layout_below="@id/activity_login_tv_input_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/activity_login_autologin_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="자동 로그인"
+            android:layout_marginLeft="5dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/activity_login_autologin_checkbox"/>
+        <TextView
+            android:id="@+id/activity_login_tv_find_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="아이디 찾기"
+            android:layout_marginRight="5dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/activity_login_tv_stick"/>
+        <TextView
+            android:id="@+id/activity_login_tv_stick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/activity_login_tv_find_password"
+            android:layout_marginRight="5dp"
+            android:layout_centerVertical="true"
+            android:text="|" />
+        <TextView
+            android:id="@+id/activity_login_tv_find_password"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="비밀번호 찾기"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/activity_login_relativelayout_login_option_find"
+        android:id="@+id/activity_login_tv_loginbtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="로그인"
+        android:gravity="center"
+        android:layout_marginHorizontal="15dp"
+        android:paddingVertical="15dp"
+        android:textColor="@color/colorWhite"
+        android:textSize="20dp"
+        android:background="@color/colorGrey2"/>
+</RelativeLayout>

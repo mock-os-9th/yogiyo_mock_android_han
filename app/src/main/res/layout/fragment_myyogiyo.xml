@@ -70,6 +70,7 @@
 
         >
         <TextView
+            android:id="@+id/fragment_myyogiyo_tv_gotologin"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="로그인"
@@ -84,6 +85,7 @@
             android:textStyle="bold"
            />
         <TextView
+            android:id="@+id/fragment_myyogiyo_tv_signup"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="회원가입"

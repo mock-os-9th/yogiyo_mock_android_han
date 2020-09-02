@@ -1,6 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:layout_marginBottom="1dp"
+        android:id="@+id/fragment_orderlist_relativelayout_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/colorWhite"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+
+        <TextView
+            android:id="@+id/fragment_orderlist_tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@color/colorBlack"
+            android:textSize="20dp"
+            android:text="비회원 주문내역"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/fragment_orderlist_tablayout_ordertype"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabSelectedTextColor="@color/colorRed2"
+        app:tabIndicatorColor="@color/colorRed2"
+        android:layout_below="@id/fragment_orderlist_relativelayout_top_bar">
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tabItem_touchorder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="터치주문  0"
+            />
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tabItem_callorder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="전화주문  0"
+            />
+    </com.google.android.material.tabs.TabLayout>
+
+    <View
+        android:id="@+id/fragment_orderlist_view_space1"
+        android:layout_width="match_parent"
+        android:layout_height="7dp"
+        android:background="@color/colorGrey3"
+        android:layout_below="@id/fragment_orderlist_tablayout_ordertype"
+        />
+
+    <LinearLayout
+        android:id="@+id/fragment_orderlist_linearlayout_advertise"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:layout_below="@+id/fragment_orderlist_view_space1">
+        <ViewFlipper
+            android:id="@+id/fragment_orderlist_viewflipper_advertise"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+    </LinearLayout>
+    <View
+        android:id="@+id/fragment_orderlist_view_space2"
+        android:layout_width="match_parent"
+        android:layout_height="7dp"
+        android:background="@color/colorGrey3"
+        android:layout_below="@id/fragment_orderlist_linearlayout_advertise"
+        />
+    <ImageView
+        android:id="@+id/fragment_orderlist_iv_noorder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/orderlist_iv_noorder"
+        android:layout_marginBottom="15dp"/>
+    <TextView
+        android:id="@+id/fragment_orderlist_tv_noorder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="주문 내역이 없습니다."
+        android:layout_below="@id/fragment_orderlist_iv_noorder"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        />
+    <TextView
+        android:id="@+id/fragment_orderlist_tv_gotoorder"
+        android:layout_below="@+id/fragment_orderlist_tv_noorder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="주문하러가기"
+        android:textColor="@color/colorWhite"
+        android:background="@color/colorRed2"
+        android:textSize="16dp"
+        android:paddingVertical="10dp"
+        android:paddingHorizontal="50dp"/>
+
+</RelativeLayout>

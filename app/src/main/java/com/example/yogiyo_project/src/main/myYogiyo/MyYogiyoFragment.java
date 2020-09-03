@@ -13,6 +13,8 @@ import androidx.fragment.app.Fragment;
 
 import com.example.yogiyo_project.R;
 import com.example.yogiyo_project.src.login.LoginMainActivity;
+import com.example.yogiyo_project.src.main.MainActivity;
+import com.example.yogiyo_project.src.signup.SignUpMainActivity;
 
 public class MyYogiyoFragment extends Fragment {
     View mView;
@@ -31,6 +33,14 @@ public class MyYogiyoFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(mView.getContext(), LoginMainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        mTvGoToSignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(mView.getContext(), SignUpMainActivity.class);
                 startActivity(intent);
             }
         });

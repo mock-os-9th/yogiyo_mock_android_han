@@ -32,34 +32,53 @@
         android:layout_below="@id/activity_login_relativelayout_top_bar"
         android:layout_centerHorizontal="true"
         android:src="@drawable/yogiyo_logo"/>
-    <EditText
-        android:id="@+id/activity_login_tv_input_email"
+    <LinearLayout
+        android:id="@+id/activity_login_linearlayout_input_email"
         android:layout_below="@id/activity_login_iv_yogiyo_logo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/view_outline1"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
+        android:paddingVertical="3dp">
+    <EditText
+        android:id="@+id/activity_login_tv_input_email"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:paddingVertical="10dp"
         android:singleLine="true"
-        android:hint="  이메일 주소 입력"/>
-    <EditText
-        android:layout_marginTop="10dp"
-        android:id="@+id/activity_login_tv_input_password"
-        android:layout_below="@id/activity_login_tv_input_email"
+        android:hint="이메일 주소 입력"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_below="@id/activity_login_linearlayout_input_email"
+        android:id="@+id/activity_login_linearlayout_input_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/view_outline1"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:paddingVertical="3dp">
+
+    <EditText
+        android:id="@+id/activity_login_tv_input_password"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:paddingVertical="10dp"
         android:singleLine="true"
-        android:hint="  비밀번호 입력"/>
+        android:hint="비밀번호 입력"/>
+</LinearLayout>
 
     <RelativeLayout
         android:layout_marginTop="10dp"
         android:id="@+id/activity_login_relativelayout_login_option_find"
-        android:layout_below="@id/activity_login_tv_input_password"
+        android:layout_below="@id/activity_login_linearlayout_input_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <androidx.appcompat.widget.AppCompatCheckBox

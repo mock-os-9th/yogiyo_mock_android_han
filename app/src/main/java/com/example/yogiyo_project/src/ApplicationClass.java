@@ -21,6 +21,7 @@ public class ApplicationClass extends Application {
 
     // 테스트 서버 주소
     public static String BASE_URL = "http://52.78.11.153/";     //필요한 여러 값들을 저장하는 클래스이다 / 다른 클래스에서 자유자재로 사용가능한 static 변수들
+    public static String BASE_URL_2 = "http://13.209.19.46/";
     // 실서버 주소
 //    public static String BASE_URL = "https://template.softsquared.com/";
 
@@ -37,6 +38,7 @@ public class ApplicationClass extends Application {
 
     // Retrofit 인스턴스
     public static Retrofit retrofit;
+    public static Retrofit retrofit2;
 
     @Override
     public void onCreate() {
@@ -63,5 +65,23 @@ public class ApplicationClass extends Application {
         }
 
         return retrofit;
+    }
+
+    public static Retrofit getRetrofit2() {
+        if (retrofit2 == null) {
+            OkHttpClient client = new OkHttpClient.Builder()
+                    .readTimeout(5000, TimeUnit.MILLISECONDS)
+                    .connectTimeout(5000, TimeUnit.MILLISECONDS)
+                    .addNetworkInterceptor(new XAccessTokenInterceptor()) // JWT 자동 헤더 전송
+                    .build();
+
+            retrofit2 = new Retrofit.Builder()
+                    .baseUrl(BASE_URL_2)
+                    .client(client)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+        }
+
+        return retrofit2;
     }
 }

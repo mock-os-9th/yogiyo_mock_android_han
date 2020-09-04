@@ -58,6 +58,8 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mView =inflater.inflate(R.layout.fragment_home, container, false);
+        System.out.println("HomeFragment onCreateView");
+
         //광고 넘기기
         mViewFlipper = mView.findViewById(R.id.fragment_home_viewflipper_advertise);
         for(int image : images){

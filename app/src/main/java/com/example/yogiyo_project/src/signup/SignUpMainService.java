@@ -2,6 +2,7 @@ package com.example.yogiyo_project.src.signup;
 
 import com.example.yogiyo_project.src.main.interfaces.MainActivityView;
 import com.example.yogiyo_project.src.main.interfaces.MainRetrofitInterface;
+import com.example.yogiyo_project.src.myinfopage.MyInfoPageMainActivity;
 import com.example.yogiyo_project.src.signup.Interfaces.SignUpActivityView;
 import com.example.yogiyo_project.src.signup.Interfaces.SignUpRetrofitInterface;
 import com.example.yogiyo_project.src.signup.models.SignUpBody;
@@ -32,7 +33,7 @@ class SignUpMainService {
                     mSignUpActivityView.validateFailure(null);  //아직 view가 호출되지 않았는데 함수가 더 빨리 실행되서 오류가 나오는 등 상황 발생할 수 있다
                     return;   //MainActivity의 validateFailure 호출된다
                 }
-
+                MyInfoPageMainActivity.MyInfoInput(userEmail, password, nickName, nickName);
                 mSignUpActivityView.signUpSuccess(signUpResponse.getMessage()); //MainActivity의 validateSuccess의 함수가 실행
 
             }

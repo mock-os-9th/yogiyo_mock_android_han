@@ -29,6 +29,8 @@ public class SignUpMainActivity extends BaseActivity implements SignUpActivityVi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
+        System.out.println("SignUp Activity onCreate");
+
         mEtSignUpEmail = findViewById(R.id.activity_login_tv_input_email);
         mEtSignUpPassWord = findViewById(R.id.activity_login_tv_input_password);
         mEtSignUpCheckPassWord = findViewById(R.id.activity_login_tv_input_checkpassword);
@@ -42,7 +44,6 @@ public class SignUpMainActivity extends BaseActivity implements SignUpActivityVi
                tryPostSignUp();
            }
        });
-
     }
 
     private void tryPostSignUp() {
@@ -61,13 +62,13 @@ public class SignUpMainActivity extends BaseActivity implements SignUpActivityVi
     }
 
     @Override
-    public void validateFailure(String message) {
+    public void validateFailure(String message) { //회원 가입 실패 시
         hideProgressDialog(); //통신이 끝나면 로딩 hide시켜준다
         showCustomToast(message == null || message.isEmpty() ? getString(R.string.network_error) : message);
     }
 
     @Override
-    public void signUpSuccess(String message) {
+    public void signUpSuccess(String message) {  //회원 가입 성공 시 호출
         hideProgressDialog();
         showCustomToast(message);
         System.out.println(message);

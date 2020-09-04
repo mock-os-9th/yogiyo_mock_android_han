@@ -24,6 +24,7 @@ public class OrderListFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mView =inflater.inflate(R.layout.fragment_orderlist, container, false);
+        System.out.println("OrderList Fragment onCreateView");
 
         //광고 넘기기
         mViewFlipper = mView.findViewById(R.id.fragment_orderlist_viewflipper_advertise);

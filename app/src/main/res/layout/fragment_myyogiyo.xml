@@ -48,9 +48,22 @@
         android:layout_width="match_parent"
         android:layout_height="0.2dp"
         android:background="@color/colorGrey1"/>
+
+    <FrameLayout
+        android:id="@+id/fragment_yogiyo_framelayout_info_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fragment_yogiyo_view_line1">
+
+        <RelativeLayout
+        android:id="@+id/fragment_myyogiyo_relativelayout_beforelogin"
+        android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+
+        >
     <TextView
         android:layout_marginTop="25dp"
-        android:layout_below="@id/fragment_yogiyo_view_line1"
         android:id="@+id/fragment_myyogiyo_tv_login_ment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -99,10 +112,106 @@
             android:background="@drawable/tv_outline"
             />
     </LinearLayout>
+</RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/fragment_myyogiyo_relativelayout_afterlogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:visibility="gone"
+            >
+           <RelativeLayout
+               android:id="@+id/fragment_myyogiyo_relativelayout_inagterlogin_1"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content">
+               <ImageView
+                   android:id="@+id/fragment_myyogiyo_iv_afterlogin_pic1"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:src="@drawable/afterlogin_pic1"
+                   android:layout_centerVertical="true"
+                   android:layout_marginLeft="15dp"
+                   />
+               <LinearLayout
+                   android:layout_toRightOf="@id/fragment_myyogiyo_iv_afterlogin_pic1"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:orientation="vertical"
+                  android:layout_centerVertical="true"
+                   android:layout_marginLeft="10dp"
+                   >
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="요기프렌드"
+                       android:textColor="@color/colorRed2"
+                       android:textSize="16dp"/>
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="닉네임을 설정해주세요."
+                       android:textColor="@color/colorBlack"
+                       android:textSize="19dp"/>
+               </LinearLayout>
+               <ImageView
+                   android:id="@+id/fragment_myyogiyo_iv_afterlogin_gotomyinfo"
+                   android:layout_width="20dp"
+                   android:layout_height="20dp"
+                   android:layout_alignParentRight="true"
+                   android:src="@drawable/ic_baseline_arrow_forward_ios_24_black"
+                   android:layout_centerVertical="true"/>
+           </RelativeLayout>
+
+            <View
+                android:layout_marginTop="15dp"
+                android:layout_below="@+id/fragment_myyogiyo_relativelayout_inagterlogin_1"
+                android:id="@+id/fragment_myyogiyo_view_afterlogin_line1"
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:background="@color/colorGrey1"/>
+            <LinearLayout
+                android:layout_marginTop="15dp"
+                android:layout_below="@+id/fragment_myyogiyo_view_afterlogin_line1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ㆍ"
+                    android:textSize="17dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorRed"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3회 더 주문 시 다음 달 요기패밀리!"
+                    android:textColor="@color/colorBlack"
+                    android:layout_weight="1"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="회원 혜택 보기"
+                    android:textColor="@color/colorRed"/>
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_baseline_arrow_forward_ios_24_black"
+                    android:layout_gravity="center_vertical"/>
+
+            </LinearLayout>
+        </RelativeLayout>
+
+
+    </FrameLayout>
+
 
     <LinearLayout
         android:layout_marginTop="20dp"
-        android:layout_below="@id/fragment_yogiyo_linearlayout_twobutton"
+        android:layout_below="@id/fragment_yogiyo_framelayout_info_login"
         android:id="@+id/fragment_yogiyo_linearlayout_couponpointreview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -123,6 +232,7 @@
             android:textColor="@color/colorBlack"
             android:layout_marginTop="15dp"/>
         <TextView
+            android:id="@+id/fragment_myyogiyo_tv_coupon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="-"
@@ -146,6 +256,7 @@
                 android:textColor="@color/colorBlack"
                 android:layout_marginTop="15dp"/>
             <TextView
+                android:id="@+id/fragment_myyogiyo_tv_point"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="-"
@@ -168,6 +279,7 @@
                 android:textColor="@color/colorBlack"
                 android:layout_marginTop="15dp"/>
             <TextView
+                android:id="@+id/fragment_myyogiyo_tv_review"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0건"
@@ -188,19 +300,34 @@
         android:background="@color/colorGrey3"
         android:layout_below="@id/fragment_yogiyo_linearlayout_couponpointreview"
         />
-    <ImageView
+    <FrameLayout
+        android:id="@+id/fragment_yogiyo_framelayout_superclub_ad_login"
         android:layout_below="@id/fragment_myyogiyo_view_space1"
-        android:id="@+id/fragment_yogiyo_iv_superclub_ad"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scaleType="fitXY"
-        android:src="@drawable/myyogiyo_superclub"/>
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/fragment_yogiyo_iv_superclub_ad_beforelogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/myyogiyo_superclub"
+             />
+
+        <ImageView
+            android:id="@+id/fragment_yogiyo_iv_superclub_ad_afterlogin"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/afterlogin_ad"
+            android:visibility="gone"/>
+</FrameLayout>
 
     <RelativeLayout
         android:id="@+id/fragment_myyogiyo_relativelayout1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/fragment_yogiyo_iv_superclub_ad"
+        android:layout_below="@id/fragment_yogiyo_framelayout_superclub_ad_login"
         android:layout_marginTop="15dp"
         >
         <TextView

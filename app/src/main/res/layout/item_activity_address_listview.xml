@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+<ImageView
+    android:id="@+id/iv_location"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/ic_baseline_location_on_24"/>
+    <LinearLayout
+        android:layout_toRightOf="@id/iv_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="5dp">
+        <TextView
+            android:id="@+id/tv_mainaddressname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="주소명"
+            android:textSize="20dp"
+            android:textColor="@color/colorBlack"/>
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="[도로명]"
+                android:textSize="16dp"/>
+            <TextView
+                android:id="@+id/tv_roadaddressname"
+                android:layout_marginLeft="2dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="도로명 주소 이름"
+                android:textSize="16dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_choose_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:text="선택"
+        android:textColor="@color/colorWhite"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:background="@color/colorRed2"
+        android:textStyle="bold"
+        android:textSize="17dp"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="5dp"/>
+
+</RelativeLayout>

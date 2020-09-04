@@ -32,9 +32,11 @@
             android:screenOrientation="portrait"></activity>
         <activity android:name=".src.main.MainActivity"
             android:screenOrientation="portrait"></activity>
-        <activity android:name=".src.login.LoginMainActivity"
+        <activity android:name=".src.login.LogInMainActivity"
             android:screenOrientation="portrait"></activity>
         <activity android:name=".src.signup.SignUpMainActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".src.myinfopage.MyInfoPageMainActivity"
             android:screenOrientation="portrait"></activity>
     </application>
 

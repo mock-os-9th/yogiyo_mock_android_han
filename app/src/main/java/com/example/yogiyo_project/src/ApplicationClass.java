@@ -21,7 +21,9 @@ public class ApplicationClass extends Application {
 
     // 테스트 서버 주소
     public static String BASE_URL = "http://52.78.11.153/";     //필요한 여러 값들을 저장하는 클래스이다 / 다른 클래스에서 자유자재로 사용가능한 static 변수들
-    public static String BASE_URL_2 = "http://13.209.19.46/";
+    public static String BASE_URL_2 = "https://yogiyo.shop/"; //요기요 서버 주소
+
+    public static String KAKAO_BASE_URL = "https://dapi.kakao.com/";
     // 실서버 주소
 //    public static String BASE_URL = "https://template.softsquared.com/";
 
@@ -40,6 +42,12 @@ public class ApplicationClass extends Application {
     public static Retrofit retrofit;
     public static Retrofit retrofit2;
 
+    //MyYogiyo 프래그먼트에서 로그인 전후로 바뀌는 광고 상태   비로그인시 false  로그인 시 true
+    public static boolean logInState = false;
+
+    //카카오 주소 API 키
+    public static String KAKAO_API_KEY = "f8c69dbfdf18a626af6d5ef9678dfd34";
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -49,7 +57,7 @@ public class ApplicationClass extends Application {
         }
     }
 
-    public static Retrofit getRetrofit() {
+    public static Retrofit getRetrofit() {  //카카오 주소 API를 위한 getRetrofit
         if (retrofit == null) {
             OkHttpClient client = new OkHttpClient.Builder()
                     .readTimeout(5000, TimeUnit.MILLISECONDS)
@@ -58,7 +66,7 @@ public class ApplicationClass extends Application {
                     .build();
 
             retrofit = new Retrofit.Builder()
-                    .baseUrl(BASE_URL)
+                    .baseUrl(KAKAO_BASE_URL)
                     .client(client)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();

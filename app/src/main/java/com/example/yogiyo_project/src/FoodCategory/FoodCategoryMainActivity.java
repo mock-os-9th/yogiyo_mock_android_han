@@ -21,6 +21,8 @@ public class FoodCategoryMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_food_category);
 
+        System.out.println("FoodCategory onCreate");
+
         mTvFoodCategoryAddress = findViewById(R.id.fragment_food_category_tv_address); //상단 주소 텍스트 누를 시 주소 설정 액티비로 이동
         mTvFoodCategoryAddress.setOnClickListener(new View.OnClickListener() {
             @Override

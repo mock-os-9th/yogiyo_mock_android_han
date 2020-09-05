@@ -27,7 +27,7 @@
             android:textAlignment="center"
             android:textColor="@color/colorBlack"
             android:textSize="18dp"
-            android:text="정자동 192"
+            android:text="주소 설정이 필요합니다"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"/>
         <TextView
@@ -131,5 +131,10 @@
             />
 
     </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager.widget.ViewPager
+
+        android:layout_width="matchparent"
+        android:layout_height="match"/>
 
 </RelativeLayout>

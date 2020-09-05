@@ -26,6 +26,8 @@ public class AddressMainActivity extends BaseActivity implements AddressMainActi
     String addressInput;
     TextView mTvAddressActivityGoToSearch;
 
+    public static AddressMainActivity activity = null;
+
     ListView mLvAddressActivityAddressListView; //주소 검색 결과 담을 리스트뷰
     public static ArrayList<AddressData> addressDataArrayList = new ArrayList<>();
     public static AddressAdapter addressAdapter = new AddressAdapter(addressDataArrayList);
@@ -34,6 +36,8 @@ public class AddressMainActivity extends BaseActivity implements AddressMainActi
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_address_main);
+
+        activity = this;
 
         mLvAddressActivityAddressListView = findViewById(R.id.activity_address_listview); //리스트뷰 어댑터 설정
         mLvAddressActivityAddressListView.setAdapter(addressAdapter);

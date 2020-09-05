@@ -48,7 +48,19 @@ public class ApplicationClass extends Application {
     //카카오 주소 API 키
     public static String KAKAO_API_KEY = "f8c69dbfdf18a626af6d5ef9678dfd34";
 
-    @Override
+    //주소명 / 도로명주소 / 위도 / 경도 / 동이름 / 주소번호
+    public static String MAIN_ADDRESS_NAME;
+    public static String ROAD_ADDRESS_NAME;
+    public static String LATITUDE;
+    public static String LONGITUDE;
+    public static String DONG_NAME;
+    public static String MAIN_ADDRESS_NO;
+
+    //주소 선택이 되었는지 체크
+    public static boolean InputAddress = false;
+
+
+   @Override
     public void onCreate() {
         super.onCreate();
 

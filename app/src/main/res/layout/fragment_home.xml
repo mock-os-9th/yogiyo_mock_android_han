@@ -31,7 +31,7 @@
             android:textAlignment="center"
             android:textColor="@color/colorBlack"
             android:textSize="18dp"
-            android:text="정자동 192" />
+            android:text="주소 설정이 필요합니다" />
         <TextView
             android:layout_marginLeft="5dp"
             android:layout_width="wrap_content"
@@ -99,11 +99,18 @@
         android:layout_below="@id/fragment_home_recyclerview_category_top"
         android:layout_marginTop="20dp"
         />
+
+    <!--주소 선택 후 Relativelayout 나타나기 -->
+    <RelativeLayout
+        android:id="@+id/fragment_home_relativelayout_after_chooseaddress"
+        android:layout_below="@id/fragment_home_view_space3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
     <LinearLayout
         android:id="@+id/fragment_home_linearlayout_mytaste"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/fragment_home_view_space3"
         android:orientation="horizontal"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="25dp">
@@ -171,6 +178,7 @@
         android:layout_marginTop="10dp"
 
         />
+     </RelativeLayout>  <!--주소 선택 후 Relativelayout 나타나기 -->
 
     </RelativeLayout>
 

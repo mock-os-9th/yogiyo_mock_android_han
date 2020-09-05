@@ -14,7 +14,6 @@ import androidx.fragment.app.Fragment;
 
 import com.example.yogiyo_project.R;
 import com.example.yogiyo_project.src.addressoption.AddressMainActivity;
-import com.example.yogiyo_project.src.main.MainActivity;
 
 public class FoodCategoryFragment extends Fragment {
     View mView;
@@ -24,7 +23,7 @@ public class FoodCategoryFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        mView =inflater.inflate(R.layout.fragment_food_category, container, false);
+        mView =inflater.inflate(R.layout.activity_food_category, container, false);
 
         mTvFoodCategoryAddress = mView.findViewById(R.id.fragment_food_category_tv_address);
         mTvFoodCategoryAddress.setOnClickListener(new View.OnClickListener() {
@@ -38,8 +37,7 @@ public class FoodCategoryFragment extends Fragment {
         mIvFoodCategoryBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MainActivity mainActivity = new MainActivity();
-                mainActivity.setFrag(0);
+
             }
         });
 

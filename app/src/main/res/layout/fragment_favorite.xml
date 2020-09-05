@@ -34,26 +34,62 @@
         android:layout_height="0.2dp"
         android:background="@color/colorGrey1"/>
 
+
+
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/frgment_favorite_iv_nologin"
-        android:layout_above="@id/fragment_favorite_tv_loginment"
+        android:layout_above="@id/fragment_favorite_linearlayout"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="15dp"
         />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/fragment_favorite_linearlayout"
+        android:orientation="vertical"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal">
     <TextView
-        android:id="@+id/fragment_favorite_tv_loginment"
+        android:id="@+id/fragment_favorite_tv_afterlogin1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="찜한 음식점이 없습니다."
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center_horizontal"
+        android:textSize="17dp"
+        android:textColor="@color/colorBlack"
+        android:layout_marginBottom="10dp"
+        android:visibility="gone"
+        />
+    <TextView
+        android:id="@+id/fragment_favorite_tv_afterlogin2"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="관심없는 음식점 상세화면에서 하트 아이콘을 눌러 '찜'하시면, 더축 편리하게 이용하실 수 있어요!"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="20dp"
+        android:visibility="gone"
+        />
+    <TextView
+        android:id="@+id/fragment_favorite_tv_beforeloginment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="로그인 후, 나의 찜 목록을 확인해보세요."
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:layout_marginBottom="15dp"/>
+        android:layout_marginBottom="15dp"
+        />
+
+    </LinearLayout>
     <TextView
         android:id="@+id/fragment_favorite_tv_gotologin"
-        android:layout_below="@id/fragment_favorite_tv_loginment"
+        android:layout_below="@id/fragment_favorite_linearlayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -63,5 +99,19 @@
         android:textSize="16dp"
         android:paddingVertical="10dp"
         android:paddingHorizontal="70dp"/>
+
+    <TextView
+        android:id="@+id/fragment_favorite_tv_gotofoodcategory"
+        android:layout_below="@id/fragment_favorite_linearlayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="음식점 보러가기"
+        android:textColor="@color/colorWhite"
+        android:background="@color/colorRed2"
+        android:textSize="16dp"
+        android:paddingVertical="10dp"
+        android:paddingHorizontal="70dp"
+        android:visibility="gone"/>
 
 </RelativeLayout>

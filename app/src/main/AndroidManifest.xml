@@ -38,6 +38,8 @@
             android:screenOrientation="portrait"></activity>
         <activity android:name=".src.myinfopage.MyInfoPageMainActivity"
             android:screenOrientation="portrait"></activity>
+        <activity android:name=".src.addressdetailinfo.AddressDetailInfoMainActivity"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

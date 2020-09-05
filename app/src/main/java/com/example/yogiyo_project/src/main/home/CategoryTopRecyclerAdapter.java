@@ -11,14 +11,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.yogiyo_project.R;
 import com.example.yogiyo_project.src.FoodCategory.FoodCategoryMainActivity;
-import com.example.yogiyo_project.src.main.MainActivity;
-import com.example.yogiyo_project.src.main.foodcategory.FoodCategoryFragment;
 
 import java.util.ArrayList;
 

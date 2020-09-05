@@ -41,6 +41,7 @@ class AddressMainService {
                     item.longitude = data.getAddressLongitude();
                     item.dongName = data.getAddress().getRegion_3depth_name();
                     item.mainAddressNo = data.getAddress().getMain_address_no();
+                    item.addressChooseTv = "선택";
 
                     AddressMainActivity.addressDataArrayList.add(item);
                 }

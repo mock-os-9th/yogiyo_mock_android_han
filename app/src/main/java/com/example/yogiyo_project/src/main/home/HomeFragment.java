@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
@@ -21,6 +22,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.yogiyo_project.R;
+import com.example.yogiyo_project.src.ApplicationClass;
 import com.example.yogiyo_project.src.addressoption.AddressMainActivity;
 import com.example.yogiyo_project.src.main.MainActivity;
 
@@ -33,12 +35,15 @@ public class HomeFragment extends Fragment {
                     R.drawable.fragmenthome_ad2,
                     R.drawable.fragmenthome_ad3};
 
-    TextView mTvAddress;
+    public static TextView mTvAddress;
 
     //그림 메뉴 카테고리 위한 변수
     RecyclerView mRecyclerViewCategoryTop;
   CategoryTopRecyclerAdapter mAdapterCategoryTop;
     ArrayList<CategoryTopRecyclerData> mListCategoryTop = new ArrayList<>();
+
+    //주소 선택 후 밑의 메뉴들 나타나게 해야함
+    RelativeLayout mRlAfterChooseAddress;
 
     //나의 입맛 저격!
     RecyclerView mRecyclerViewStore;
@@ -68,6 +73,7 @@ public class HomeFragment extends Fragment {
 
         //최상단 주소 텍스트 누를 시
         mTvAddress = mView.findViewById(R.id.fragment_home_tv_address);
+
         mTvAddress.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -124,6 +130,8 @@ public class HomeFragment extends Fragment {
 
         //상단 음식 그림 카테고리 리사이클러 끝
 
+        //주소 선택 후 밑의 리사이클러뷰들 나타나야함
+        mRlAfterChooseAddress = mView.findViewById(R.id.fragment_home_relativelayout_after_chooseaddress);
 
         //나의 입맛 저격! 리사이클러뷰  -  로그인 했을때만 나타남
         mRecyclerViewStore = mView.findViewById(R.id.fragment_home_recyclerview_mytaste);
@@ -169,6 +177,20 @@ public class HomeFragment extends Fragment {
 
         return mView;
     }
+
+    @Override
+    public void onResume() {  //프래그먼트 다시 실행될 때
+        super.onResume();
+        System.out.println("HomeFragment onResume");
+        if(ApplicationClass.InputAddress){   //주소 선택되었는지 체크하고  선택되었으면 상단 주소텍트스 내용 변경
+            mTvAddress.setText(ApplicationClass.DONG_NAME+" "+ApplicationClass.MAIN_ADDRESS_NO);
+            mRlAfterChooseAddress.setVisibility(View.VISIBLE);
+        }
+    }
+
+
+
+
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {

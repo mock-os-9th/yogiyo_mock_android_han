@@ -2,18 +2,16 @@ package com.example.yogiyo_project.src.main;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 
 import com.example.yogiyo_project.R;
+import com.example.yogiyo_project.src.addressdetailinfo.AddressDetailInfoMainActivity;
 import com.example.yogiyo_project.src.main.favorite.FavoriteFragment;
 import com.example.yogiyo_project.src.main.foodcategory.FoodCategoryFragment;
-import com.example.yogiyo_project.src.main.home.CategoryTopRecyclerAdapter;
 import com.example.yogiyo_project.src.main.home.HomeFragment;
 import com.example.yogiyo_project.src.main.myYogiyo.MyYogiyoFragment;
 import com.example.yogiyo_project.src.main.orderList.OrderListFragment;
@@ -27,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private  SearchFragment mSearchFragment;
     private  OrderListFragment mOrderListFragment;
     private  MyYogiyoFragment mMyYogiyoFragment;
-    private  FoodCategoryFragment mFoodCategoryFragment;
+    private FoodCategoryFragment mFoodCategoryFragment;
 
     private BottomNavigationView mBottomNavigationView;
     private static FragmentManager mFragmentManager;
@@ -40,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        System.out.println("MainActiviy onCreate");
         mFragmentManager = getSupportFragmentManager();
 
 
@@ -80,7 +80,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
+    @Override
+    protected void onResume() {
+        super.onResume();
+        System.out.println("MainActivity onResume");
+    }
 
     /*static*/ public void setFrag(int n){   //setfrag5 위해서 static으로 하면 프래먼트 간 이동방식으로 가능 하지만 static 좋지 않으므로 우선 액티비티 이동으로 하기
         mFragmentTransaction = mFragmentManager.beginTransaction();

@@ -133,8 +133,15 @@
     </com.google.android.material.tabs.TabLayout>
 
     <androidx.viewpager.widget.ViewPager
+        android:id="@+id/activity_foodcategory_viewpager"
+        android:layout_below="@id/fragment_food_category_tablayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        android:layout_width="matchparent"
-        android:layout_height="match"/>
+        </ScrollView>
+    </androidx.viewpager.widget.ViewPager>
 
 </RelativeLayout>

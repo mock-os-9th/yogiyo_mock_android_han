@@ -22,4 +22,6 @@
     <string name="categorytop_menu13">프랜차이즈</string>
     <string name="categorytop_menu14">편의점/마트</string>
     <string name="categorytop_menu15">테이크아웃</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

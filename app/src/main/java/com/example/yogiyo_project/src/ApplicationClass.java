@@ -22,6 +22,7 @@ public class ApplicationClass extends Application {
     // 테스트 서버 주소
     public static String BASE_URL = "http://52.78.11.153/";     //필요한 여러 값들을 저장하는 클래스이다 / 다른 클래스에서 자유자재로 사용가능한 static 변수들
     public static String BASE_URL_2 = "https://yogiyo.shop/"; //요기요 서버 주소
+    public static String BASE_URL_CATEGORY = "https://minzzu.shop/"; //현재 가게조회 테스트 서버
 
     public static String KAKAO_BASE_URL = "https://dapi.kakao.com/";
     // 실서버 주소
@@ -41,6 +42,7 @@ public class ApplicationClass extends Application {
     // Retrofit 인스턴스
     public static Retrofit retrofit;
     public static Retrofit retrofit2;
+    public static Retrofit retrofit3;
 
     //MyYogiyo 프래그먼트에서 로그인 전후로 바뀌는 광고 상태   비로그인시 false  로그인 시 true
     public static boolean logInState = false;
@@ -57,8 +59,10 @@ public class ApplicationClass extends Application {
     public static String MAIN_ADDRESS_NO;
 
     //주소 선택이 되었는지 체크
-    public static boolean InputAddress = false;
+    public static boolean INPUT_ADDRESS = false;
 
+    //홈 화면 메뉴 카테고리 리사이클러뷰에서 특정 카테고리 선택 시 화면 전환되면서 해당 카테고리의 탭 아이템 선택되게 하기
+    public static int MENU_CATEGORY_NUM = 1;
 
    @Override
     public void onCreate() {
@@ -103,5 +107,22 @@ public class ApplicationClass extends Application {
         }
 
         return retrofit2;
+    }
+    public static Retrofit getRetrofit3() {  //가게정보 테스트를 위한 retrofit3
+        if (retrofit3 == null) {
+            OkHttpClient client = new OkHttpClient.Builder()
+                    .readTimeout(5000, TimeUnit.MILLISECONDS)
+                    .connectTimeout(5000, TimeUnit.MILLISECONDS)
+                    .addNetworkInterceptor(new XAccessTokenInterceptor()) // JWT 자동 헤더 전송
+                    .build();
+
+            retrofit3 = new Retrofit.Builder()
+                    .baseUrl(BASE_URL_CATEGORY)
+                    .client(client)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+        }
+
+        return retrofit3;
     }
 }

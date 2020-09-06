@@ -3,12 +3,83 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".src.FoodCategory.FoodCategoryFragment1">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    tools:context=".src.FoodCategory.FoodCategoryFragment1"
+    android:id="@+id/foodcategory_fragment1"
+    >
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:id="@+id/foodcategory_fragment1_relativelayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="전체보기" />
+        android:layout_height="wrap_content">
+        <View
+            android:id="@+id/foodcategory_fragment1_view_space1"
+            android:layout_width="match_parent"
+            android:layout_height="7dp"
+            android:background="@color/colorGrey3"
+            />
+        <TextView
+            android:id="@+id/foodcategory_fragment1_tv_ourtownplus"
+            android:layout_below="@id/foodcategory_fragment1_view_space1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="우리동네 플러스"
+            android:textColor="@color/colorBlack"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"/>
+        <ListView
+            android:id="@+id/foodcategory_fragment1_listview_ourtownplus"
+            android:layout_below="@id/foodcategory_fragment1_tv_ourtownplus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"/>
+        <View
+            android:id="@+id/foodcategory_fragment1_view_space2"
+            android:layout_below="@id/foodcategory_fragment1_listview_ourtownplus"
+            android:layout_width="match_parent"
+            android:layout_height="7dp"
+            android:background="@color/colorGrey3"
+            />
+        <TextView
+            android:id="@+id/foodcategory_fragment1_tv_superredweek"
+            android:layout_below="@id/foodcategory_fragment1_view_space2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="슈퍼레드위크 추천"
+            android:textColor="@color/colorBlack"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"/>
+        <ListView
+            android:id="@+id/foodcategory_fragment1_listview_superredweek"
+            android:layout_below="@id/foodcategory_fragment1_tv_superredweek"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"/>
+        <View
+            android:id="@+id/foodcategory_fragment1_view_space3"
+            android:layout_below="@id/foodcategory_fragment1_listview_superredweek"
+            android:layout_width="match_parent"
+            android:layout_height="7dp"
+            android:background="@color/colorGrey3"
+            />
+        <TextView
+            android:id="@+id/foodcategory_fragment1_tv_yogiyogeneral"
+            android:layout_below="@id/foodcategory_fragment1_view_space3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="요기요 등록 음식점"
+            android:textColor="@color/colorBlack"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"/>
+        <ListView
+            android:id="@+id/foodcategory_fragment1_listview_yogiyogeneral"
+            android:layout_below="@id/foodcategory_fragment1_tv_yogiyogeneral"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"/>
+
+    </RelativeLayout>
+</ScrollView>
 
 </FrameLayout>

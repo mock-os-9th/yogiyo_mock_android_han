@@ -1,6 +1,5 @@
 package com.example.yogiyo_project.src.addressdetailinfo;
 
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
@@ -17,8 +16,6 @@ import com.example.yogiyo_project.src.ApplicationClass;
 import com.example.yogiyo_project.src.BaseActivity;
 import com.example.yogiyo_project.src.addressoption.AddressMainActivity;
 import com.example.yogiyo_project.src.addressoption.interfaces.AddressMainActivityView;
-import com.example.yogiyo_project.src.main.MainActivity;
-import com.example.yogiyo_project.src.main.home.HomeFragment;
 
 public class AddressDetailInfoMainActivity extends BaseActivity implements AddressMainActivityView {
     EditText mEtAddressDetailInput;
@@ -90,7 +87,7 @@ public class AddressDetailInfoMainActivity extends BaseActivity implements Addre
             @Override
             public void onClick(View view) {
                 if(deliveryHere) {
-                    ApplicationClass.InputAddress = true; // 주소 선택 완료 했으므로  true로!!
+                    ApplicationClass.INPUT_ADDRESS = true; // 주소 선택 완료 했으므로  true로!!
                     if (AddressMainActivity.activity != null) { //이전 AddressMain 액티비티 살아있다면 끄기
                         AddressMainActivity activity = (AddressMainActivity) AddressMainActivity.activity;
                         activity.finish();

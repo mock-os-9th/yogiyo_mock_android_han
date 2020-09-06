@@ -137,11 +137,12 @@
         android:layout_below="@id/fragment_food_category_tablayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <ListView
+            android:id="@+id/all_food_list_listview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
 
-        </ScrollView>
     </androidx.viewpager.widget.ViewPager>
 
 </RelativeLayout>

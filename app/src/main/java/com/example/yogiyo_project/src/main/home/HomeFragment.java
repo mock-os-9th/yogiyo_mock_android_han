@@ -24,7 +24,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.yogiyo_project.R;
 import com.example.yogiyo_project.src.ApplicationClass;
 import com.example.yogiyo_project.src.addressoption.AddressMainActivity;
-import com.example.yogiyo_project.src.main.MainActivity;
 
 import java.util.ArrayList;
 
@@ -182,11 +181,13 @@ public class HomeFragment extends Fragment {
     public void onResume() {  //프래그먼트 다시 실행될 때
         super.onResume();
         System.out.println("HomeFragment onResume");
-        if(ApplicationClass.InputAddress){   //주소 선택되었는지 체크하고  선택되었으면 상단 주소텍트스 내용 변경
+        if(ApplicationClass.INPUT_ADDRESS){   //주소 선택되었는지 체크하고  선택되었으면 상단 주소텍트스 내용 변경
             mTvAddress.setText(ApplicationClass.DONG_NAME+" "+ApplicationClass.MAIN_ADDRESS_NO);
             mRlAfterChooseAddress.setVisibility(View.VISIBLE);
         }
     }
+
+
 
 
 

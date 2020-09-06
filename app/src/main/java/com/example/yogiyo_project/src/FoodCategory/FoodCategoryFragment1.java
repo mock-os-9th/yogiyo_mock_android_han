@@ -7,8 +7,16 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.ListView;
 
 import com.example.yogiyo_project.R;
+import com.example.yogiyo_project.src.ApplicationClass;
+import com.example.yogiyo_project.src.FoodCategory.interfaces.FoodCategoryActivityView;
+import com.example.yogiyo_project.src.addressoption.AddressAdapter;
+import com.example.yogiyo_project.src.addressoption.AddressData;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -18,6 +26,8 @@ import com.example.yogiyo_project.R;
 public class FoodCategoryFragment1 extends Fragment {
 
     View mView;
+    FrameLayout fragment1;
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -63,10 +73,21 @@ public class FoodCategoryFragment1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         mView = inflater.inflate(R.layout.fragment_food_category1, container, false);
+        fragment1 = mView.findViewById(R.id.foodcategory_fragment1);
 
 
 
 
         return mView;
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if(ApplicationClass.INPUT_ADDRESS){
+            fragment1.setVisibility(View.VISIBLE);
+        }
+    }
+
+
 }

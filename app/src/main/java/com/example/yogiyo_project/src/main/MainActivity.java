@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.example.yogiyo_project.R;
 import com.example.yogiyo_project.src.addressdetailinfo.AddressDetailInfoMainActivity;
@@ -114,6 +115,18 @@ public class MainActivity extends AppCompatActivity {
                 mFragmentTransaction.replace(R.id.main_framelayout, mFoodCategoryFragment);
                 mFragmentTransaction.commit();
                 break;
+        }
+    }
+
+    private long time = 0;
+    @Override                       //뒤로가기 버튼을 정해진 시간내에 두번 누를 경우 앱 종료되게 하기
+    public void onBackPressed() {
+        //super.onBackPressed();
+        if(System.currentTimeMillis() - time >= 2000){
+            time = System.currentTimeMillis();
+            Toast.makeText(getApplicationContext(), "'뒤로'버튼을 한번 더 누르시면 종료됩니다.",Toast.LENGTH_SHORT).show();
+        }else if(System.currentTimeMillis()-time<2000){
+            finish();
         }
     }
 }

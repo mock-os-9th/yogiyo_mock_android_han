@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.yogiyo_project.R;
+import com.example.yogiyo_project.src.ApplicationClass;
 import com.example.yogiyo_project.src.FoodCategory.FoodCategoryMainActivity;
 
 import java.util.ArrayList;
@@ -61,12 +62,18 @@ public class CategoryTopRecyclerAdapter extends RecyclerView.Adapter<CategoryTop
        holder.ivMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+            if(position != 1 && position !=2) {   //선택한 카테고리에 맞게 탭 아이템이 선택되게 하기 위함
+                Intent intent = new Intent(holder.itemView.getContext(), FoodCategoryMainActivity.class);
+                if(position == 0){
+                    ApplicationClass.MENU_CATEGORY_NUM = position;
+                }
+                else{
+                    ApplicationClass.MENU_CATEGORY_NUM = position-2;
+                }
+                holder.itemView.getContext().startActivity(intent);
 
-           Intent intent = new Intent(holder.itemView.getContext(), FoodCategoryMainActivity.class);
-           holder.itemView.getContext().startActivity(intent);
-
-               // MainActivity.setFrag(5);
-
+                // MainActivity.setFrag(5);
+                }
             }
         });
 

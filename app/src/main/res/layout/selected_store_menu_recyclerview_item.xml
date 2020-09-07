@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorWhite"
+    android:padding="10dp"
+    >
+    <ImageView
+        android:id="@+id/selected_store_recycleritem_iv_menu"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/selected_store_recycler_iv"/>
+    <TextView
+        android:id="@+id/selected_store_recycleritem_tv_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="제육 튀김 만두"
+        android:textSize="17dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/colorBlack1"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp">
+        <TextView
+            android:id="@+id/selected_store_recycleritem_tv_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5000"
+            android:textSize="17dp"
+            android:textColor="@color/colorBlack1"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="원"
+            android:textSize="17dp"
+            android:textColor="@color/colorBlack1"/>
+    </LinearLayout>
+</LinearLayout>

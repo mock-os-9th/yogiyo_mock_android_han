@@ -1,6 +1,7 @@
 package com.example.yogiyo_project.src.main.home;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.yogiyo_project.R;
+import com.example.yogiyo_project.src.selectedStore.SelectedStoreMainActivity;
 
 import java.util.ArrayList;
                                 //나의 입맛 저격! 리사이클러뷰 어댑터
@@ -43,6 +45,16 @@ public class StoreRecyclerAdapter extends RecyclerView.Adapter<StoreRecyclerAdap
         holder.tvStoreRating.setText(item.getmStringStoreRating());
         holder.tvStoreReviewCount.setText(item.getmStringReviewCount());
         holder.tvStoreAdditionalInfo.setText(item.getmStringAdditionalInfo());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(holder.itemView.getContext(), SelectedStoreMainActivity.class);
+                holder.itemView.getContext().startActivity(intent);
+
+            }
+        });
+
 
     }
 

@@ -2,12 +2,13 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:paddingVertical="13dp">
 
     <ImageView
         android:id="@+id/item_food_category_listview_iv_storeimage"
-        android:layout_width="85dp"
-        android:layout_height="85dp"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
         android:scaleType="fitXY"
         android:src="@drawable/fragment_home_mytaste1"/>
     <LinearLayout

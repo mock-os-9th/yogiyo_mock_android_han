@@ -6,9 +6,7 @@
     tools:context=".src.FoodCategory.FoodCategoryFragment1"
     android:id="@+id/foodcategory_fragment1"
     >
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+
     <RelativeLayout
         android:id="@+id/foodcategory_fragment1_relativelayout"
         android:layout_width="match_parent"
@@ -16,7 +14,7 @@
         <View
             android:id="@+id/foodcategory_fragment1_view_space1"
             android:layout_width="match_parent"
-            android:layout_height="7dp"
+            android:layout_height="10dp"
             android:background="@color/colorGrey3"
             />
         <TextView
@@ -80,6 +78,6 @@
             android:layout_marginTop="15dp"/>
 
     </RelativeLayout>
-</ScrollView>
+
 
 </FrameLayout>

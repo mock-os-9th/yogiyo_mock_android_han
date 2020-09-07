@@ -91,7 +91,7 @@ public class MyYogiyoFragment extends Fragment {
     }
 
     public static void MyYogiyoFragmentUIChangeAsLogIn(){
-        if(ApplicationClass.logInState){
+        if(ApplicationClass.LOGIN_STATE){
             mIvSuperclubAdBeforeLogin.setVisibility(View.GONE);
             mIvSuperclubAdAfterLogin.setVisibility(View.VISIBLE);
 

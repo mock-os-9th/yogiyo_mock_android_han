@@ -29,13 +29,17 @@ public class FoodCategoryMainActivity extends BaseActivity implements FoodCatego
     TabLayout.Tab tab;
 
     ListView mLvFoodListListView; //주소 검색 결과 담을 리스트뷰
-    public static ArrayList<FoodCategoryListViewData> allFoodDataArrayList = new ArrayList<>();
-    public static FoodCategoryListViewAdapter foodListAdapter = new FoodCategoryListViewAdapter(allFoodDataArrayList);
+    public static ArrayList<FoodCategoryListViewData> allFoodDataArrayList;
+    public static FoodCategoryListViewAdapter foodListAdapter;
+
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food_category);
+        allFoodDataArrayList = new ArrayList<>();
+        foodListAdapter = new FoodCategoryListViewAdapter(allFoodDataArrayList);
 
         System.out.println("FoodCategory onCreate");
 
@@ -72,10 +76,12 @@ public class FoodCategoryMainActivity extends BaseActivity implements FoodCatego
         System.out.println("FoodCategory onResume");
         if(ApplicationClass.INPUT_ADDRESS){   //주소 선택 시 상단에 주소 값 변경되게 하기
             mTvFoodCategoryAddress.setText(ApplicationClass.DONG_NAME+" "+ApplicationClass.MAIN_ADDRESS_NO);
+            mVp.setVisibility(View.VISIBLE);
         }
         tab = mTl.getTabAt(ApplicationClass.MENU_CATEGORY_NUM);
         tab.select();
 
+        allFoodDataArrayList.clear();
         tryGetFoodList();
     }
 
@@ -88,7 +94,7 @@ public class FoodCategoryMainActivity extends BaseActivity implements FoodCatego
     private void tryGetFoodList(){
         showProgressDialog();
         final FoodCategoryMainService foodCategoryMainService = new FoodCategoryMainService(this);
-        foodCategoryMainService.getFoodList("37.2", "10.1");  //위,경도 값 보내줘야함
+        foodCategoryMainService.getFoodList(37.2, 10.1);  //위,경도 값 보내줘야함
 
     }
 

@@ -21,10 +21,11 @@ public class ApplicationClass extends Application {
 
     // 테스트 서버 주소
     public static String BASE_URL = "http://52.78.11.153/";     //필요한 여러 값들을 저장하는 클래스이다 / 다른 클래스에서 자유자재로 사용가능한 static 변수들
-    public static String BASE_URL_2 = "https://yogiyo.shop/"; //요기요 서버 주소
-    public static String BASE_URL_CATEGORY = "https://minzzu.shop/"; //현재 가게조회 테스트 서버
+    public static String BASE_URL_2 = "https://yogiyo.shop/"; //엘리님 테스트 서버 주소 / 회원가입 / 로그인
+    public static String BASE_URL_CATEGORY = "https://minzzu.shop/"; //엘리님 테스트 서버 주소 / 주소 입력 후 카테고리별 가게 조회/
+    public static String BASE_URL_TORY = "http://3.34.178.226/"; //토리님 테스트 서버 주소 / 특정가게 정보 조회 /
 
-    public static String KAKAO_BASE_URL = "https://dapi.kakao.com/";
+    public static String KAKAO_BASE_URL = "https://dapi.kakao.com/"; // 카카오톡 주소 api
     // 실서버 주소
 //    public static String BASE_URL = "https://template.softsquared.com/";
 
@@ -43,9 +44,10 @@ public class ApplicationClass extends Application {
     public static Retrofit retrofit;
     public static Retrofit retrofit2;
     public static Retrofit retrofit3;
+    public static Retrofit retrofit4;
 
     //MyYogiyo 프래그먼트에서 로그인 전후로 바뀌는 광고 상태   비로그인시 false  로그인 시 true
-    public static boolean logInState = false;
+    public static boolean LOGIN_STATE = false;
 
     //카카오 주소 API 키
     public static String KAKAO_API_KEY = "f8c69dbfdf18a626af6d5ef9678dfd34";
@@ -64,7 +66,14 @@ public class ApplicationClass extends Application {
     //홈 화면 메뉴 카테고리 리사이클러뷰에서 특정 카테고리 선택 시 화면 전환되면서 해당 카테고리의 탭 아이템 선택되게 하기
     public static int MENU_CATEGORY_NUM = 1;
 
-   @Override
+
+    //특정 가게 선택 시 리뷰 수
+    public static int REVIEW_COUNT = 0;
+    //특정 가게 선택 시 메뉴 수
+    public static int MENU_COUNT = 0;
+
+
+  @Override
     public void onCreate() {
         super.onCreate();
 
@@ -124,5 +133,23 @@ public class ApplicationClass extends Application {
         }
 
         return retrofit3;
+    }
+
+    public static Retrofit getRetrofit4() {  //토리님 URL 사용 / 특정 가게 정보
+        if (retrofit4 == null) {
+            OkHttpClient client = new OkHttpClient.Builder()
+                    .readTimeout(5000, TimeUnit.MILLISECONDS)
+                    .connectTimeout(5000, TimeUnit.MILLISECONDS)
+                    .addNetworkInterceptor(new XAccessTokenInterceptor()) // JWT 자동 헤더 전송
+                    .build();
+
+            retrofit4 = new Retrofit.Builder()
+                    .baseUrl(BASE_URL_TORY)
+                    .client(client)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+        }
+
+        return retrofit4;
     }
 }

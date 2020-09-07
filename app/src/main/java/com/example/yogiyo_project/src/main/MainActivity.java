@@ -5,11 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.example.yogiyo_project.R;
+import com.example.yogiyo_project.src.ApplicationClass;
+import com.example.yogiyo_project.src.FoodCategory.FoodCategoryMainActivity;
 import com.example.yogiyo_project.src.addressdetailinfo.AddressDetailInfoMainActivity;
 import com.example.yogiyo_project.src.main.favorite.FavoriteFragment;
 import com.example.yogiyo_project.src.main.foodcategory.FoodCategoryFragment;
@@ -128,5 +132,53 @@ public class MainActivity extends AppCompatActivity {
         }else if(System.currentTimeMillis()-time<2000){
             finish();
         }
+    }
+
+    public void CategoryTxtClick(View view){
+        switch(view.getId()){
+            case R.id.tv_all:
+                ApplicationClass.MENU_CATEGORY_NUM = 0;
+                break;
+            case R.id.tv_chicken:
+                ApplicationClass.MENU_CATEGORY_NUM = 1;
+                break;
+            case R.id.tv_china:
+                ApplicationClass.MENU_CATEGORY_NUM = 2;
+                break;
+            case R.id.tv_pizza:
+                ApplicationClass.MENU_CATEGORY_NUM = 3;
+                break;
+            case R.id.tv_korean:
+                ApplicationClass.MENU_CATEGORY_NUM = 4;
+                break;
+            case R.id.tv_boonsik:
+                ApplicationClass.MENU_CATEGORY_NUM = 5;
+                break;
+            case R.id.tv_cafe:
+                ApplicationClass.MENU_CATEGORY_NUM = 6;
+                break;
+            case R.id.tv_foroneperson:
+                ApplicationClass.MENU_CATEGORY_NUM = 7;
+                break;
+            case R.id.tv_japan:
+                ApplicationClass.MENU_CATEGORY_NUM = 8;
+                break;
+            case R.id.tv_jokbo:
+                ApplicationClass.MENU_CATEGORY_NUM = 9;
+                break;
+            case R.id.tv_franchise:
+                ApplicationClass.MENU_CATEGORY_NUM = 10;
+                break;
+            case R.id.tv_night:
+                ApplicationClass.MENU_CATEGORY_NUM = 11;
+                break;
+            case R.id.tv_mart:
+                ApplicationClass.MENU_CATEGORY_NUM = 12;
+                break;
+            default:
+                break;
+        }
+        Intent intent = new Intent(MainActivity.this, FoodCategoryMainActivity.class);
+        startActivity(intent);
     }
 }

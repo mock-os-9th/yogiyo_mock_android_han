@@ -27,6 +27,16 @@ public class FoodCategoryFragment1 extends Fragment {
 
     View mView;
     FrameLayout fragment1;
+    public static ListView mLvFoodListListView1_1; //주소 검색 결과 담을 리스트뷰
+    public static ListView mLvFoodListListView1_2;
+    public static ListView mLvFoodListListView1_3;
+    public static ArrayList<FoodCategoryListViewData> fragment1_1FoodDataArrayList = new ArrayList<>();
+    public static ArrayList<FoodCategoryListViewData> fragment1_2FoodDataArrayList = new ArrayList<>();
+    public static ArrayList<FoodCategoryListViewData> fragment1_3FoodDataArrayList = new ArrayList<>();
+    public static FoodCategoryListViewAdapter foodListAdapter1_1;
+    public static FoodCategoryListViewAdapter foodListAdapter1_2;
+    public static FoodCategoryListViewAdapter foodListAdapter1_3;
+
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -75,8 +85,9 @@ public class FoodCategoryFragment1 extends Fragment {
         mView = inflater.inflate(R.layout.fragment_food_category1, container, false);
         fragment1 = mView.findViewById(R.id.foodcategory_fragment1);
 
-
-
+        mLvFoodListListView1_1 = mView.findViewById(R.id.foodcategory_fragment1_listview_ourtownplus);
+        mLvFoodListListView1_2 = mView.findViewById(R.id.foodcategory_fragment1_listview_superredweek);
+        mLvFoodListListView1_3 = mView.findViewById(R.id.foodcategory_fragment1_listview_yogiyogeneral);
 
         return mView;
     }
@@ -87,6 +98,36 @@ public class FoodCategoryFragment1 extends Fragment {
         if(ApplicationClass.INPUT_ADDRESS){
             fragment1.setVisibility(View.VISIBLE);
         }
+    }
+
+    public static void FoodFragment1(){
+        fragment1_1FoodDataArrayList.clear();
+        fragment1_2FoodDataArrayList.clear();
+        fragment1_3FoodDataArrayList.clear();
+
+        for(int i = 0; i < FoodCategoryMainActivity.allFoodDataArrayList.size(); i++){
+            if(FoodCategoryMainActivity.allFoodDataArrayList.get(i).KindOfStore == "plusStore"){
+                fragment1_1FoodDataArrayList.add(FoodCategoryMainActivity.allFoodDataArrayList.get(i));
+            }
+            if(FoodCategoryMainActivity.allFoodDataArrayList.get(i).KindOfStore == "redWeekStore"){
+                fragment1_2FoodDataArrayList.add(FoodCategoryMainActivity.allFoodDataArrayList.get(i));
+            }
+            fragment1_3FoodDataArrayList.add(FoodCategoryMainActivity.allFoodDataArrayList.get(i));
+            System.out.println(FoodCategoryMainActivity.allFoodDataArrayList.get(i).KindOfStore);
+        }
+
+        foodListAdapter1_1 = new FoodCategoryListViewAdapter(fragment1_1FoodDataArrayList);
+        mLvFoodListListView1_1.setAdapter(foodListAdapter1_1);
+        foodListAdapter1_1.notifyDataSetChanged();
+
+        foodListAdapter1_2 = new FoodCategoryListViewAdapter(fragment1_2FoodDataArrayList);
+        mLvFoodListListView1_2.setAdapter(foodListAdapter1_2);
+        foodListAdapter1_2.notifyDataSetChanged();
+
+        foodListAdapter1_3 = new FoodCategoryListViewAdapter(fragment1_3FoodDataArrayList);
+        mLvFoodListListView1_3.setAdapter(foodListAdapter1_3);
+        foodListAdapter1_3.notifyDataSetChanged();
+
     }
 
 

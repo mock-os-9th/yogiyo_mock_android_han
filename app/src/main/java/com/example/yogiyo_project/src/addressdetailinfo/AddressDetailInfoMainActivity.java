@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
@@ -87,6 +88,7 @@ public class AddressDetailInfoMainActivity extends BaseActivity implements Addre
             @Override
             public void onClick(View view) {
                 if(deliveryHere) {
+                    Toast.makeText(view.getContext(),"주소 설정이 완료되었습니다", Toast.LENGTH_SHORT).show();
                     ApplicationClass.INPUT_ADDRESS = true; // 주소 선택 완료 했으므로  true로!!
                     if (AddressMainActivity.activity != null) { //이전 AddressMain 액티비티 살아있다면 끄기
                         AddressMainActivity activity = (AddressMainActivity) AddressMainActivity.activity;

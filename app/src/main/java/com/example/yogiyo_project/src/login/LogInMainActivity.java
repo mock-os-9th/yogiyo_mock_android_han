@@ -159,8 +159,9 @@ public class LogInMainActivity extends BaseActivity implements LogInActivityView
         editor.commit();
 
         System.out.println("로그인 성공");
+        System.out.println(sSharedPreferences.getString(X_ACCESS_TOKEN, null));
 
-        ApplicationClass.logInState = true;
+        ApplicationClass.LOGIN_STATE = true;
         MyYogiyoFragment.MyYogiyoFragmentUIChangeAsLogIn();
 
         onBackPressed();

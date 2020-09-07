@@ -64,7 +64,7 @@ public class AddressAdapter extends BaseAdapter {
         tvChooseAddress.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context,"pos "+ position, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(context,"pos "+ position, Toast.LENGTH_SHORT).show();
 
                 ApplicationClass.MAIN_ADDRESS_NAME = data.mainAddressName;  //선택한 주소 정보들 담기
                 ApplicationClass.ROAD_ADDRESS_NAME = data.roadAddressName;

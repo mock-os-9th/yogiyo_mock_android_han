@@ -59,7 +59,7 @@ public class FavoriteFragment extends Fragment {
     public void onResume() {
         super.onResume();
             //로그인 상태에 따라 화면 구성 바뀜
-        if(ApplicationClass.logInState){
+        if(ApplicationClass.LOGIN_STATE){
             mTvAfterLogin1.setVisibility(View.VISIBLE);
             mTvAfterLogin2.setVisibility(View.VISIBLE);
             mTvBeforeLogin.setVisibility(View.GONE);

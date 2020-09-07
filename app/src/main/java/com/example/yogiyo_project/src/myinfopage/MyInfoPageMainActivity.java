@@ -6,7 +6,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.yogiyo_project.R;
 import com.example.yogiyo_project.src.ApplicationClass;
@@ -58,7 +57,7 @@ public class MyInfoPageMainActivity extends BaseActivity {
         mTvMyInfoLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ApplicationClass.logInState = false;
+                ApplicationClass.LOGIN_STATE = false;
                 MyYogiyoFragment.MyYogiyoFragmentUIChangeAsLogIn();
                 showCustomToast("로그아웃 되었습니다");
                 onBackPressed(); //마이요기요 프래그먼트로 복귀

@@ -24,13 +24,14 @@ class FoodCategoryMainService {
         this.mFoodCategoryActivityView = foodCategoryActivityView;
     }
 
-    void getFoodList(String latitude, String longitude) {  //서버통신부분
+    void getFoodList(double latitude, double longitude) {  //서버통신부분
         final FoodCategoryRetrofitInterface foodCategoryRetrofitInterface = getRetrofit3().create(FoodCategoryRetrofitInterface.class);
-        foodCategoryRetrofitInterface.getAllStoreList(new FoodCategory1Body(latitude,longitude)).enqueue(new Callback<FoodCategory1Response>() {  //비동기 호출
+        foodCategoryRetrofitInterface.getAllStoreList(latitude, longitude).enqueue(new Callback<FoodCategory1Response>() {  //비동기 호출
             @Override
             public void onResponse(Call<FoodCategory1Response> call, Response<FoodCategory1Response> response) {
                 final FoodCategory1Response foodCategory1Response = response.body(); //response = 서버에서 api통신을 통해 얻은 json..?
                 if (foodCategory1Response == null) {
+                    System.out.println("reponse null");
                     mFoodCategoryActivityView.validateFailure(null);  //아직 view가 호출되지 않았는데 함수가 더 빨리 실행되서 오류가 나오는 등 상황 발생할 수 있다
                     return;   //MainActivity의 validateFailure 호출된다
                 }
@@ -49,8 +50,10 @@ class FoodCategoryMainService {
                     FoodCategoryMainActivity.allFoodDataArrayList.add(item);
                 }
                 FoodCategoryMainActivity.foodListAdapter.notifyDataSetChanged();
-
-                mFoodCategoryActivityView.getStoreListSuccess("가게 리스트 탐색에성공했습니다"); //MainActivity의 validateSuccess의 함수가 실행
+                System.out.println(FoodCategoryMainActivity.allFoodDataArrayList.size());
+                mFoodCategoryActivityView.getStoreListSuccess("가게 탐색에 성공했습니다");
+                FoodCategoryFragment1.FoodFragment1();
+                FoodCategoryFragment2.FoodFragment2();                              //MainActivity의 validateSuccess의 함수가 실행
             }
 
             @Override

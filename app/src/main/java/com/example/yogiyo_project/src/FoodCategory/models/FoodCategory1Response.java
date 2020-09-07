@@ -14,7 +14,7 @@ public class FoodCategory1Response {
         public String cesco;  //세스코 여부 N or Y
         public int reviews;  //리뷰 개수
         public int masterComments; //사장님 댓글 개수
-        public int star;   //별점
+        public double star;   //별점
         public String isNew; // 신규 여부   "NEW"
         public String isBest;  // "Y" 우수 여부
         public int discount;   //할인율

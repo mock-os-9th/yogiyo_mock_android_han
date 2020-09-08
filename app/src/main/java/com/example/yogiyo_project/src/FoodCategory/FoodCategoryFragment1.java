@@ -98,6 +98,7 @@ public class FoodCategoryFragment1 extends Fragment {
         if(ApplicationClass.INPUT_ADDRESS){
             fragment1.setVisibility(View.VISIBLE);
         }
+        FoodFragment1();
     }
 
     public static void FoodFragment1(){

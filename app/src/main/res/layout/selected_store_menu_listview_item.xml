@@ -6,6 +6,7 @@
     android:layout_marginLeft="10dp"
     android:paddingVertical="20dp">
     <LinearLayout
+        android:layout_marginLeft="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -15,7 +16,8 @@
         android:layout_height="wrap_content"
         android:text="바른 김밥"
         android:textColor="@color/colorBlack1"
-        android:textSize="17dp"/>
+        android:textSize="17dp"
+        android:textStyle="bold"/>
     <TextView
         android:id="@+id/selected_store_menu_listview_tv_menuinfo"
         android:layout_width="wrap_content"
@@ -32,13 +34,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="4000"
-        android:textColor="@color/colorBlack1"
+        android:textColor="@color/colorBlack"
         android:textSize="17dp"/>
     <TextView
+        android:layout_marginLeft="2dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/colorBlack1"
-        android:text="원"/>
+        android:text="원"
+        android:textSize="17dp"/>
         </LinearLayout>
 
 

@@ -35,7 +35,7 @@
                            android:layout_marginLeft="15dp"
                            android:layout_weight="1"/>
                        <ImageView
-                           android:id="@+id/selected_store_iv_listview_popular_close"
+                           android:id="@+id/selected_store_iv_listview_popular_openclose"
                            android:layout_width="wrap_content"
                            android:layout_height="wrap_content"
                            android:src="@drawable/ic_baseline_selected_store_menu_listview_close"
@@ -50,7 +50,7 @@
                     android:id="@+id/selected_store_listview_popular"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:visibility="gone"/>
+                    />
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="7dp"

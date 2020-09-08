@@ -33,4 +33,14 @@ public class SelectedStoreMainActivity extends BaseActivity {
 
 
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mVpAdapter.notifyDataSetChanged();
+    }
+
+    public void refresh(){
+        mVpAdapter.notifyDataSetChanged();
+    }
 }

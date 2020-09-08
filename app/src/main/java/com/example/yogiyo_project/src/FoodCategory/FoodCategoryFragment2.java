@@ -44,6 +44,7 @@ public class FoodCategoryFragment2 extends Fragment {
             }
             mLvFoodListListView2.setAdapter(foodListAdapter2);
             foodListAdapter2.notifyDataSetChanged(); */
+       FoodFragment2();
         }
 
 

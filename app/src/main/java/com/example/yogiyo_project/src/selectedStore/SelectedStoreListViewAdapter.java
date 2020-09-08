@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.yogiyo_project.R;
+import com.example.yogiyo_project.src.ApplicationClass;
 import com.example.yogiyo_project.src.addressoption.AddressData;
 import com.example.yogiyo_project.src.selectedmenu.SelectedMenuMainActivity;
 
@@ -57,11 +58,17 @@ public class SelectedStoreListViewAdapter extends BaseAdapter {
         tvMenuName.setText(data.menuName);
         tvMenuInfo.setText(data.menuInfo);
         tvMenuPrice.setText(data.menuPrice);
-        tvMenuImage.setImageDrawable(data.menuImageDrawable);
+        tvMenuImage.setImageResource(data.menuImageDrawable);
+
 
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ApplicationClass.MENU_NAME = data.menuName;
+                ApplicationClass.MENU_INFO = data.menuInfo;
+                ApplicationClass.MENU_PRICE = data.menuPrice;
+                ApplicationClass.MENU_IAMGE = data.menuImageDrawable;
+
                 Intent intent = new Intent(view.getContext(), SelectedMenuMainActivity.class);
                 view.getContext().startActivity(intent);
             }

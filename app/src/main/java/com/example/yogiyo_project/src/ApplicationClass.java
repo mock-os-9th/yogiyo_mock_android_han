@@ -3,6 +3,7 @@ package com.example.yogiyo_project.src;
 import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.drawable.Drawable;
 
 import com.example.yogiyo_project.config.XAccessTokenInterceptor;
 
@@ -71,6 +72,12 @@ public class ApplicationClass extends Application {
     public static int REVIEW_COUNT = 0;
     //특정 가게 선택 시 메뉴 수
     public static int MENU_COUNT = 0;
+
+    //특정 가게의 특정 메뉴 선택 시
+    public static String MENU_NAME;  //해당 메뉴 이름
+    public static String MENU_INFO;  //해당 메뉴 정보
+    public static String MENU_PRICE; //해당 메뉴 가격
+    public static int MENU_IAMGE; // 해당 메뉴 이미지 리소스
 
 
   @Override

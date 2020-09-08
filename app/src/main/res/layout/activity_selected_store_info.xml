@@ -2,14 +2,16 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        >
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <!--contratint start -->
 <androidx.constraintlayout.widget.ConstraintLayout
@@ -88,7 +90,8 @@
             android:textColor="@color/colorBlack1"
             android:textSize="20dp"
             tools:layout_editor_absoluteX="160dp"
-            tools:layout_editor_absoluteY="257dp" />
+            tools:layout_editor_absoluteY="257dp"
+            android:gravity="center"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -344,12 +347,49 @@
 
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/selected_stroe_viewpager"
-            android:layout_below="@+id/selected_stroe_tablayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="650dp"
+            android:layout_below="@+id/selected_stroe_tablayout"
+            android:layout_marginTop="10dp"
+            >
 
         </androidx.viewpager.widget.ViewPager>
 
+        <View
+            android:layout_below="@+id/selected_stroe_viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"/>
+
     </RelativeLayout>
     </ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:id="@+id/selected_store_tv_callorder"
+            android:gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorRed3"
+            android:text="전화주문"
+            android:textColor="@color/colorWhite"
+            android:textSize="18dp"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="15dp"/>
+        <TextView
+            android:id="@+id/selected_store_tv_touchorder"
+            android:gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/colorRed"
+            android:text="터치 주문"
+            android:textColor="@color/colorWhite"
+            android:textSize="18dp"
+            android:paddingVertical="10dp"/>
+
+    </LinearLayout>
 </RelativeLayout>

@@ -42,6 +42,8 @@
             android:screenOrientation="portrait"></activity>
         <activity android:name=".src.selectedStore.SelectedStoreMainActivity"
             android:screenOrientation="portrait"></activity>
+        <activity android:name=".src.selectedmenu.SelectedMenuMainActivity"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

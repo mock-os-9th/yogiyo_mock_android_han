@@ -19,7 +19,7 @@ public class SelectedStoreFragmentCleanReview extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mView = inflater.inflate(R.layout.fragment_selected_store_clean_review, container, false);
-
+        System.out.println("SelectedStore Fragment CleanReview onCreateView");
 
         return mView;
     }

@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <ImageView
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/selected_store_popmenu1"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:id="@+id/selected_menu_tv_menuname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="바른 김밥"
+        android:layout_marginTop="10dp"
+        android:textSize="25dp"
+        android:textColor="@color/colorBlack1"
+        />
+
+    <TextView
+        android:id="@+id/selected_menu_tv_menuinfo"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="두번 구운 남해 청정지역 김에 신선한 재료를 가득 담은 김밥"/>
+   <Button
+       android:layout_marginTop="15dp"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_gravity="center"
+       android:gravity="center"
+       android:text="리뷰보기>"
+       android:background="@drawable/corner_round"
+       android:paddingHorizontal="30dp"
+       />
+
+    <View
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:background="@color/colorGrey2"/>
+
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="가격"
+            android:textColor="@color/colorBlack1"
+            android:textSize="20dp"/>
+        <TextView
+            android:id="@+id/selected_menu_tv_menuprice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4000"
+            android:textSize="20dp"
+            android:layout_marginRight="5dp"
+            android:textColor="@color/colorBlack1"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="원"
+            android:textColor="@color/colorBlack1"
+            android:textSize="20dp"
+            android:layout_marginRight="10dp"/>
+    </LinearLayout>
+    <View
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:background="@color/colorGrey2"/>
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="수량"
+            android:textColor="@color/colorBlack1"
+            android:textSize="20dp"/>
+        <TextView
+            android:id="@+id/selected_menu_tv_minus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:textSize="25dp"
+            android:textColor="@color/colorBlack1"
+            android:background="@drawable/view_outline1"
+            android:paddingHorizontal="10dp"
+            />
+        <TextView
+            android:id="@+id/selected_menu_tv_count_presentmenutotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:textColor="@color/colorBlack1"
+            android:textSize="25dp"
+            android:paddingHorizontal="18dp"
+            android:background="@drawable/view_outline1"/>
+        <TextView
+            android:id="@+id/selected_menu_tv_plus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:textSize="25dp"
+            android:textColor="@color/colorBlack1"
+            android:background="@drawable/view_outline1"
+            android:paddingHorizontal="10dp"
+            android:layout_marginRight="10dp"
+            />
+    </LinearLayout>
+    <View
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:background="@color/colorGrey2"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@color/colorGrey3">
+        <LinearLayout
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="총 주문 금액"
+                android:textColor="@color/colorBlack1"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:textSize="20dp"
+                android:layout_marginLeft="10dp"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+                <LinearLayout
+                    android:gravity="right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+            <TextView
+                android:id="@+id/selected_menu_tv_price_presentmenutotal"
+                android:layout_marginLeft="40dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="4000"
+                android:textSize="26dp"
+                android:textStyle="bold"
+                android:textColor="@color/colorRed"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="원"
+                        android:layout_weight="1"
+                        android:textSize="26dp"
+                        android:textStyle="bold"
+                        android:layout_marginRight="5dp"
+                        android:textColor="@color/colorRed"/>
+                </LinearLayout>
+                <TextView
+                    android:layout_marginRight="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(최소주문 금액 16000원)"
+                    android:textColor="@color/colorBlack1"
+                    android:paddingHorizontal="5dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:id="@+id/selected_store_tv_callorder"
+            android:gravity="center_horizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorGrey1"
+            android:text="주문표에 추가"
+            android:layout_weight="1"
+            android:textColor="@color/colorWhite"
+            android:textSize="18dp"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="15dp"/>
+        <TextView
+            android:id="@+id/selected_menu_tv_gotopay"
+            android:gravity="center_horizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/colorRed"
+            android:text="주문하기"
+            android:textColor="@color/colorWhite"
+            android:textSize="18dp"
+            android:paddingVertical="10dp"/>
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

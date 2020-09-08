@@ -19,7 +19,7 @@ public class SelectedStoreFragmentInfo extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mView = inflater.inflate(R.layout.fragment_selected_store_info, container, false);
-
+        System.out.println("SelectedStore Fragment Info onCreateView");
 
         return mView;
     }

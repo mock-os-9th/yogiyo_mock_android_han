@@ -6,8 +6,10 @@ import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 
 import com.example.yogiyo_project.config.XAccessTokenInterceptor;
+import com.example.yogiyo_project.src.orderchart.OrderChartListViewData;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
@@ -78,6 +80,12 @@ public class ApplicationClass extends Application {
     public static String MENU_INFO;  //해당 메뉴 정보
     public static String MENU_PRICE; //해당 메뉴 가격
     public static int MENU_IAMGE; // 해당 메뉴 이미지 리소스
+
+    //특정 메뉴 주문표에 담을 시
+    public static boolean PICK_MENU = false; // 아무것도 선택하기 전에는 false
+
+    //특정 메뉴 주문표에 담기 위한 리스트
+    public static ArrayList<OrderChartListViewData> mOrderChartDataList = new ArrayList<>();
 
 
   @Override

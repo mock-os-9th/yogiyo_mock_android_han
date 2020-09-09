@@ -25,6 +25,7 @@ import com.example.yogiyo_project.R;
 import com.example.yogiyo_project.src.ApplicationClass;
 import com.example.yogiyo_project.src.FoodCategory.FoodCategoryMainActivity;
 import com.example.yogiyo_project.src.addressoption.AddressMainActivity;
+import com.example.yogiyo_project.src.orderchart.OrderChartMainActivity;
 
 import java.util.ArrayList;
 
@@ -57,6 +58,9 @@ public class HomeFragment extends Fragment {
 
     private FragmentManager mFragmentManager;
     private FragmentTransaction mFragmentTransaction;
+
+    //주문표에 메뉴 담길 시 오른쪽 상단에 카트 아이콘 나타나야함
+    ImageView mIvGoToOrderChart;
 
 
     @Nullable
@@ -175,6 +179,16 @@ public class HomeFragment extends Fragment {
 
 
 
+
+        mIvGoToOrderChart = mView.findViewById(R.id.fragment_home_iv_goto_orderchart);
+        mIvGoToOrderChart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(mView.getContext(), OrderChartMainActivity.class);
+                mView.getContext().startActivity(intent);
+            }
+        });
+
         return mView;
     }
 
@@ -185,6 +199,10 @@ public class HomeFragment extends Fragment {
         if(ApplicationClass.INPUT_ADDRESS){   //주소 선택되었는지 체크하고  선택되었으면 상단 주소텍트스 내용 변경
             mTvAddress.setText(ApplicationClass.DONG_NAME+" "+ApplicationClass.MAIN_ADDRESS_NO);
             mRlAfterChooseAddress.setVisibility(View.VISIBLE);
+
+            if(ApplicationClass.PICK_MENU) {
+                mIvGoToOrderChart.setVisibility(View.VISIBLE);
+            }
         }
     }
 

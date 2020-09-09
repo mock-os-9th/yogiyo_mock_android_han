@@ -98,7 +98,7 @@
         android:layout_marginTop="15dp"
         android:text="요기로 배달"
         android:textSize="20dp"
-        android:paddingVertical="10dp"
+        android:paddingVertical="15dp"
         android:gravity="center_horizontal"
         android:background="@color/colorGrey2"
         android:textColor="@color/colorWhite"/>

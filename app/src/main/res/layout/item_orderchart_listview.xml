@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="15dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:orientation="vertical"
+    android:paddingVertical="15dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginRight="10dp"
+        >
+        <TextView
+            android:id="@+id/item_orderchart_listview_tv_menuname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="바른 김밥"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/colorBlack1"
+            android:textSize="17dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/item_orderchart_listview_tv_menuprice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4000"
+                android:textStyle="bold"
+                android:textSize="17dp"
+                android:textColor="@color/colorBlack1"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="원"
+                android:textStyle="bold"
+                android:textSize="17dp"
+                android:textColor="@color/colorBlack1"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="15dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+        <TextView
+            android:id="@+id/activity_orderchart_tv_delete"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="삭제"
+            android:background="@drawable/view_outline1"
+            android:textSize="16dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/colorBlack1"
+            android:paddingVertical="4dp"
+            android:paddingHorizontal="8dp"/>
+        </LinearLayout>
+     <LinearLayout
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:orientation="horizontal"
+         android:background="@drawable/view_outline1">
+         <TextView
+             android:id="@+id/activity_orderchart_tv_minus"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="-"
+             android:textSize="22dp"
+             android:textStyle="bold"
+             android:textColor="@color/colorBlack1"
+             android:paddingHorizontal="10dp"
+             />
+         <TextView
+             android:id="@+id/activity_orderchart_tv_count_presentmenutotal"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="1"
+             android:textColor="@color/colorRed"
+             android:textSize="22dp"
+             android:paddingHorizontal="10dp"
+             />
+         <TextView
+             android:id="@+id/activity_orderchart_tv_plus"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="+"
+             android:textSize="22dp"
+             android:textColor="@color/colorBlack1"
+             android:paddingHorizontal="10dp"
+             />
+     </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

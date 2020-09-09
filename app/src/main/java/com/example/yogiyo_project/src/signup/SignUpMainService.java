@@ -33,7 +33,7 @@ class SignUpMainService {
                     mSignUpActivityView.validateFailure(null);  //아직 view가 호출되지 않았는데 함수가 더 빨리 실행되서 오류가 나오는 등 상황 발생할 수 있다
                     return;   //MainActivity의 validateFailure 호출된다
                 }
-                MyInfoPageMainActivity.MyInfoInput(userEmail, password, nickName, phoneNum);
+                //MyInfoPageMainActivity.MyInfoInput(userEmail, password, nickName, phoneNum);
                 mSignUpActivityView.signUpSuccess(signUpResponse.getMessage()); //MainActivity의 validateSuccess의 함수가 실행
 
             }

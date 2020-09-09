@@ -11,8 +11,10 @@ import com.example.yogiyo_project.R;
 import com.example.yogiyo_project.src.ApplicationClass;
 import com.example.yogiyo_project.src.BaseActivity;
 import com.example.yogiyo_project.src.main.myYogiyo.MyYogiyoFragment;
+import com.example.yogiyo_project.src.myinfopage.inferfaces.MyInfoPageActivityView;
+import com.example.yogiyo_project.src.selectedStore.SelectedStoreMainService;
 
-public class MyInfoPageMainActivity extends BaseActivity {
+public class MyInfoPageMainActivity extends BaseActivity implements MyInfoPageActivityView {
     static TextView mTvMyInfoEmail;
     static TextView mTvMyInfoPassword;
     static TextView mTvMyInfoPhoneNum;
@@ -21,10 +23,6 @@ public class MyInfoPageMainActivity extends BaseActivity {
     static TextView mTvMyInfoLogout;
     static TextView mTvMyInfoWithdrawal;
 
-    static String mUserEmail;
-    static String mPassword;
-    static String mNickName;
-    static String mPhoneNum;
 
     ImageView mIvMyInfoBackBtn;
 
@@ -48,10 +46,6 @@ public class MyInfoPageMainActivity extends BaseActivity {
         mTvMyInfoPhoneNum = findViewById(R.id.activity_myinfopage_tv_phonenum);
         mTvMyInfoNickname = findViewById(R.id.activity_myinfopage_tv_nickname);
 
-        mTvMyInfoEmail.setText(mUserEmail);
-        mTvMyInfoPassword.setText(mPassword);
-        mTvMyInfoNickname.setText(mNickName);
-        mTvMyInfoPhoneNum.setText(mPhoneNum);
 
         mTvMyInfoLogout = findViewById(R.id.activity_myinfopage_tv_logout); //로그아웃 클릭 시
         mTvMyInfoLogout.setOnClickListener(new View.OnClickListener() {
@@ -63,12 +57,36 @@ public class MyInfoPageMainActivity extends BaseActivity {
                 onBackPressed(); //마이요기요 프래그먼트로 복귀
             }
         });
+
+        tryGetMyInfo();
     }
 
-    public static void MyInfoInput(String userEmail, String password, String nickName, String phoneNum){ //회원 가입 시 저장한 스트링 값들 가져와야 함
+    /*public static void MyInfoInput(String userEmail, String password, String nickName, String phoneNum){ //회원 가입 시 저장한 스트링 값들 가져와야 함
         mUserEmail = userEmail;
         mPassword = password;
         mNickName = nickName;
         mPhoneNum = phoneNum;
+    }*/
+
+    @Override
+    public void validateFailure(String message) {
+        hideProgressDialog(); //통신이 끝나면 로딩 hide시켜준다
+        showCustomToast(message == null || message.isEmpty() ? getString(R.string.network_error) : message);
+    }
+
+    @Override
+    public void MyInfoSuccess(String userEmail, String passWord, String phoneNum, String nickName) {
+        hideProgressDialog();
+        mTvMyInfoEmail.setText(userEmail);
+        mTvMyInfoPassword.setText(passWord);
+        mTvMyInfoNickname.setText(nickName);
+        mTvMyInfoPhoneNum.setText("0"+phoneNum);
+    }
+
+    private void tryGetMyInfo() {
+        showProgressDialog();  //로딩시작!  // 서버통신전에 로딩을 띄워주는것
+        System.out.println("로딩시작");
+        final MyInfoPageService myInfoPageService = new MyInfoPageService(this);
+        myInfoPageService.getMyInfo();
     }
 }

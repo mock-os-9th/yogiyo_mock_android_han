@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.example.yogiyo_project.R;
 import com.example.yogiyo_project.src.ApplicationClass;
+import com.example.yogiyo_project.src.BaseActivity;
 import com.example.yogiyo_project.src.FoodCategory.FoodCategoryMainActivity;
 import com.example.yogiyo_project.src.addressdetailinfo.AddressDetailInfoMainActivity;
 import com.example.yogiyo_project.src.main.favorite.FavoriteFragment;
@@ -23,7 +24,7 @@ import com.example.yogiyo_project.src.main.orderList.OrderListFragment;
 import com.example.yogiyo_project.src.main.search.SearchFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     private  HomeFragment mHomeFragment;
     private  FavoriteFragment mFavoriteFragment;

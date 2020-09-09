@@ -43,7 +43,6 @@ public class SelectedStoreFragmentMenu extends Fragment {
         mView = inflater.inflate(R.layout.fragment_selected_store_menu, container, false);
         System.out.println("SelectedStore Fragment Menu onCreateView");
 
-        ((SelectedStoreMainActivity)getActivity()).refresh();
 
         mIvMenuOpenClose = mView.findViewById(R.id.selected_store_iv_listview_popular_openclose);
 

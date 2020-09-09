@@ -112,6 +112,6 @@ public class FoodCategoryMainActivity extends BaseActivity implements FoodCatego
     @Override
     public void getStoreListSuccess(String message) {
         hideProgressDialog();
-        showCustomToast(message);
+        //showCustomToast(message);
     }
 }

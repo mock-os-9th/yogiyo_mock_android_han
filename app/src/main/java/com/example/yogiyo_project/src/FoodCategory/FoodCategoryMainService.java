@@ -46,12 +46,13 @@ class FoodCategoryMainService {
                     item.signaturemenu = data.signaturemenu;
                     item.deliveryTime = data.deliveryTime;
                     item.cesco = data.cesco;
+                    item.storeIdx = data.storeIdx;
 
                     FoodCategoryMainActivity.allFoodDataArrayList.add(item);
                 }
                 FoodCategoryMainActivity.foodListAdapter.notifyDataSetChanged();
                 System.out.println(FoodCategoryMainActivity.allFoodDataArrayList.size());
-               // mFoodCategoryActivityView.getStoreListSuccess("가게 탐색에 성공했습니다");
+                mFoodCategoryActivityView.getStoreListSuccess("가게 탐색에 성공했습니다");
                 FoodCategoryFragment1.FoodFragment1();
                 FoodCategoryFragment2.FoodFragment2();                              //MainActivity의 validateSuccess의 함수가 실행
             }

@@ -19,11 +19,13 @@
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
                    android:orientation="horizontal"
-                   android:paddingVertical="12dp">
+                   android:paddingVertical="12dp"
+                   android:gravity="center_vertical">
                        <ImageView
-                           android:layout_width="25dp"
-                           android:layout_height="25dp"
+                           android:layout_width="22dp"
+                           android:layout_height="22dp"
                            android:src="@drawable/selected_store_popular"
+                           android:layout_marginLeft="10dp"
                            />
                        <TextView
                            android:id="@+id/selected_store_tv_popularmenu"
@@ -32,7 +34,7 @@
                             android:text="인기 메뉴"
                            android:textColor="@color/colorBlack1"
                            android:textSize="20dp"
-                           android:layout_marginLeft="15dp"
+                           android:layout_marginLeft="10dp"
                            android:layout_weight="1"/>
                        <ImageView
                            android:id="@+id/selected_store_iv_listview_popular_openclose"

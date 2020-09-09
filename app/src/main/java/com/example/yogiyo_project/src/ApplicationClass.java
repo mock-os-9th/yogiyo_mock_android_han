@@ -7,6 +7,7 @@ import android.graphics.drawable.Drawable;
 
 import com.example.yogiyo_project.config.XAccessTokenInterceptor;
 import com.example.yogiyo_project.src.orderchart.OrderChartListViewData;
+import com.example.yogiyo_project.src.selectedStore.models.SelectStoreResponse;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -87,6 +88,23 @@ public class ApplicationClass extends Application {
     //특정 메뉴 주문표에 담기 위한 리스트
     public static ArrayList<OrderChartListViewData> mOrderChartDataList = new ArrayList<>();
 
+    //가게 리스트에서 선택 시 전달 할 가게 번호
+    public static int STORE_IDX = 1;   //int형임!
+
+   // public static SelectStoreResponse SELECT_STORE_INFO = new SelectStoreResponse();  // 선택한 가게 정보 담긴 객체
+    public static String STORE_NAME = null;
+    public static String STORE_ISDISCOUNT = null;
+    public static String STORE_DELIVERY_TIME = null;
+    public static String STORE_minimumCharge = null;
+    public static String STORE_isWished = null;
+    public static String STORE_deliverycharge = null;
+    public static int STORE_wishCnt = 0; //찜수
+    public static int STORE_menuCnt = 0; //메뉴 수
+    public static int STORE_reviewCnt = 0; //리뷰수
+    public static double STORE_totalScore = 0; //평점
+
+
+
 
   @Override
     public void onCreate() {
@@ -124,7 +142,7 @@ public class ApplicationClass extends Application {
                     .build();
 
             retrofit2 = new Retrofit.Builder()
-                    .baseUrl(BASE_URL_2)
+                    .baseUrl(BASE_URL_TORY)
                     .client(client)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();

@@ -86,7 +86,7 @@
             android:layout_height="wrap_content"
             android:inputType="textMultiLine"
             android:maxWidth="180dp"
-            android:text="바르다김선생-분당정자신기사거리점"
+            android:text="선택한 가게 이름"
             android:textColor="@color/colorBlack1"
             android:textSize="20dp"
             tools:layout_editor_absoluteX="160dp"

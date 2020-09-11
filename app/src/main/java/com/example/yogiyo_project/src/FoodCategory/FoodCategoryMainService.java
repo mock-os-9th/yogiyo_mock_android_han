@@ -55,6 +55,8 @@ class FoodCategoryMainService {
                 mFoodCategoryActivityView.getStoreListSuccess("가게 탐색에 성공했습니다");
                 FoodCategoryFragment1.FoodFragment1();
                 FoodCategoryFragment2.FoodFragment2();                              //MainActivity의 validateSuccess의 함수가 실행
+                //FoodCategoryFragment3.FoodFragment3();
+                //FoodCategoryFragment4.FoodFragment4();
             }
 
             @Override

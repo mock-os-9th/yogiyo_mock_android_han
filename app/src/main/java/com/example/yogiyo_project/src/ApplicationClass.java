@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 
 import com.example.yogiyo_project.config.XAccessTokenInterceptor;
+import com.example.yogiyo_project.src.main.orderList.OrderListViewData;
 import com.example.yogiyo_project.src.orderchart.OrderChartListViewData;
 import com.example.yogiyo_project.src.selectedStore.models.SelectStoreResponse;
 
@@ -90,6 +91,11 @@ public class ApplicationClass extends Application {
 
     //특정 메뉴 주문표에 담기 위한 리스트
    public static ArrayList<OrderChartListViewData> mOrderChartDataList = new ArrayList<>();
+   //주문 완료 후 정보 가져오기 위한 리스트
+    public static ArrayList<OrderListViewData> mOrderListViewDataList = new ArrayList<>();
+    //주문하면 true
+    public static boolean IS_ORDER = false;
+
 
     //가게 리스트에서 선택 시 전달 할 가게 번호
     public static int STORE_IDX = 1;   //int형임!

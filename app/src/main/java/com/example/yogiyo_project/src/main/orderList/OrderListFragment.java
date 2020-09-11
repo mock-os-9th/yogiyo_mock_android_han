@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
@@ -26,11 +28,28 @@ public class OrderListFragment extends Fragment {
     TextView mTvGoToFoodList;
     TextView mTvTitle;
 
+    ListView mListView;
+    OrderListViewAdapter mAdapter;
+
+    RelativeLayout mRl;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mView =inflater.inflate(R.layout.fragment_orderlist, container, false);
         System.out.println("OrderList Fragment onCreateView");
+
+        mRl = mView.findViewById(R.id.before_order_realativelayout);
+
+        mListView = null;
+        mAdapter = null;
+
+        mListView = mView.findViewById(R.id.orderlist_listview);
+        mAdapter = new OrderListViewAdapter(ApplicationClass.mOrderListViewDataList);
+        mListView.setAdapter(mAdapter);
+
+        mAdapter.notifyDataSetChanged();
+
 
         //광고 넘기기
         mViewFlipper = mView.findViewById(R.id.fragment_orderlist_viewflipper_advertise);
@@ -60,6 +79,11 @@ public class OrderListFragment extends Fragment {
         } else{
           mTvTitle.setText("비회원 주문내역");
         }
+        if(ApplicationClass.IS_ORDER){
+            mRl.setVisibility(View.GONE);
+            mListView.setVisibility(View.VISIBLE);
+        }
+        mAdapter.notifyDataSetChanged();
     }
 
     //상단 광고 넘기는 method

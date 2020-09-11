@@ -51,11 +51,11 @@ public class OrderChartMainActivity extends BaseActivity implements OrderChartAc
         mIvDeleteAllOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mIvDeleteAllOrder.setVisibility(View.INVISIBLE); //장바구니에 품목 0 이면 장바구니 들어올 수 있는 아이콘 사라짐
+               // mIvDeleteAllOrder.setVisibility(View.INVISIBLE); //장바구니에 품목 0 이면 장바구니 들어올 수 있는 아이콘 사라짐
                 tryDeleteOrder();
-                mTvTotalPrice.setText("0원");
-                mTvDeliveryCharge.setText("-");
-                mTvStoreName.setText("-");
+               // mTvTotalPrice.setText("0원");
+
+               // mTvStoreName.setText("-");
             }
         });
         mTvStoreName = findViewById(R.id.activity_orderchart_2_tv_storename);
@@ -90,9 +90,9 @@ public class OrderChartMainActivity extends BaseActivity implements OrderChartAc
     @Override
     protected void onResume() {
         super.onResume();
-        System.out.println(ApplicationClass.STORE_deliverycharge);
+        System.out.println("현재오류"+ApplicationClass.STORE_deliverycharge);
         String str = ApplicationClass.STORE_deliverycharge;
-        System.out.println(str.substring(0,4));
+       // System.out.println(str.substring(0,4));
         int deliveryCharge = Integer.parseInt(str.substring(0,4));
         mTvDeliveryCharge.setText(deliveryCharge+"원");
         int totalprice = 0;

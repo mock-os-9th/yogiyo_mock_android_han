@@ -4,4 +4,6 @@ public interface OrderCompleteActivityView {
     void validateFailure(String message);
 
     void OrderCompleteSuccess(String message);
+
+    void OrderListSuccess(String message);
 }

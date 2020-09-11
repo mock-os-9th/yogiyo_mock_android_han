@@ -74,15 +74,26 @@
         android:background="@color/colorGrey3"
         android:layout_below="@id/fragment_orderlist_linearlayout_advertise"
         />
+    <FrameLayout
+        android:layout_below="@+id/fragment_orderlist_view_space2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:id="@+id/before_order_realativelayout"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            >
     <ImageView
         android:id="@+id/fragment_orderlist_iv_noorder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
+      android:layout_centerHorizontal="true"
         android:src="@drawable/orderlist_iv_noorder"
         android:layout_marginBottom="15dp"/>
     <TextView
+
         android:id="@+id/fragment_orderlist_tv_noorder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -103,5 +114,14 @@
         android:textSize="16dp"
         android:paddingVertical="10dp"
         android:paddingHorizontal="50dp"/>
+        </RelativeLayout>
+
+        <ListView
+            android:id="@+id/orderlist_listview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+
+    </FrameLayout>
 
 </RelativeLayout>

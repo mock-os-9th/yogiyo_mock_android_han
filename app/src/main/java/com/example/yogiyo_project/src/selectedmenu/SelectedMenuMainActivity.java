@@ -146,7 +146,7 @@ public class SelectedMenuMainActivity extends BaseActivity implements AddMenuAct
     @Override
     public void CartInquireSuccess(String message) {
         hideProgressDialog();
-        showCustomToast("주문표 조회 성공  음식점 : " + message);
+        System.out.println("주문표 조회 성공  음식점 이름 : " + message);
     }
 
     @Override

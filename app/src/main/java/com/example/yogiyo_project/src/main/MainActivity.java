@@ -45,6 +45,8 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        ApplicationClass.mOrderChartDataList.clear();
+
         System.out.println("MainActiviy onCreate");
         mFragmentManager = getSupportFragmentManager();
 

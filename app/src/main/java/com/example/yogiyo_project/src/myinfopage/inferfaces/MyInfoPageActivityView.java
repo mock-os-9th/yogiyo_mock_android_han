@@ -4,4 +4,6 @@ public interface MyInfoPageActivityView {
     void validateFailure(String message);
 
     void MyInfoSuccess(String email, String password, String phoneNum, String nickName);
+
+    void WithdrwalSuccess(String message);
 }

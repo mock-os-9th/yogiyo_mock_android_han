@@ -58,16 +58,19 @@ public class SelectedStoreListViewAdapter extends BaseAdapter {
         tvMenuName.setText(data.menuName);
         tvMenuInfo.setText(data.menuInfo);
         tvMenuPrice.setText(data.menuPrice);
-        tvMenuImage.setImageResource(data.menuImageDrawable);
+        //tvMenuImage.setImageResource(data.menuImageDrawable);
 
 
         view.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                ApplicationClass.MENU_NAME = data.menuName;
+            public void onClick(View view) {  //메뉴별 리스트뷰에서 해당 메뉴 클릭 시
+                /*ApplicationClass.MENU_NAME = data.menuName;
                 ApplicationClass.MENU_INFO = data.menuInfo;
-                ApplicationClass.MENU_PRICE = data.menuPrice;
-                ApplicationClass.MENU_IAMGE = data.menuImageDrawable;
+                ApplicationClass.MENU_PRICE = data.menuPrice;*/
+                ApplicationClass.MENU_IDX = data.menuIdx;
+                System.out.println("selected menu idx" + ApplicationClass.MENU_IDX);
+
+               // ApplicationClass.MENU_IAMGE = data.menuImageDrawable;
 
                 Intent intent = new Intent(view.getContext(), SelectedMenuMainActivity.class);
                 view.getContext().startActivity(intent);

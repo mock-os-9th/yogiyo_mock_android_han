@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    >
 
     <RelativeLayout
         android:layout_marginBottom="1dp"
@@ -10,7 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="@color/colorWhite"
-        android:orientation="horizontal"
         >
 
         <ImageView
@@ -45,20 +45,22 @@
             android:layout_marginRight="10dp"/>
     </RelativeLayout>
 
+
     <View
+        android:layout_below="@+id/activity_orderchart_relativelayout_top_bar"
         android:id="@+id/activity_orderchart_view_line1"
-        android:layout_below="@id/activity_orderchart_relativelayout_top_bar"
         android:layout_width="match_parent"
         android:layout_height="0.2dp"
         android:background="@color/colorGrey2"/>
+
     <TextView
         android:id="@+id/activity_orderchart_tv_storename"
-        android:layout_below="@id/activity_orderchart_view_line1"
+        android:layout_below="@+id/activity_orderchart_view_line1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:layout_marginLeft="10dp"
-        android:text="바르다김선생-분당정자신기사거리점"
+        android:text="가게 이름"
         android:textColor="@color/colorBlack1"
         android:textSize="19dp"/>
 
@@ -72,38 +74,36 @@
 
     <ListView
         android:id="@+id/activity_orderchart_listview"
-        android:layout_below="@+id/activity_orderchart_view_line2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/activity_orderchart_view_line2"
+        android:visibility="gone"
+
         />
 
     <LinearLayout
+        android:id="@+id/activity_orderchart_linearlayout_costinfo"
         android:layout_below="@+id/activity_orderchart_listview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:orientation="horizontal"
         android:background="@color/colorGrey3"
-        android:layout_weight="1">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="20dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="합계"
-            android:textSize="16dp"
-            android:textColor="@color/colorBlack1"
-            android:layout_weight="1"
-            android:layout_marginLeft="10dp"/>
+        >
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="합계"/>
 
+        <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
        <TextView
            android:id="@+id/activity_orderchart_tv_totalprice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
            android:text="4000"
-           android:textSize="20dp"
+           android:textSize="27dp"
            android:textColor="@color/colorRed"
            android:textStyle="bold"
            android:layout_marginRight="3dp"/>
@@ -111,19 +111,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="원"
-            android:textSize="20dp"
+            android:textSize="27dp"
             android:textColor="@color/colorRed"
             android:textStyle="bold"
             android:layout_marginRight="15dp"/>
         </LinearLayout>
-    </LinearLayout>
+</LinearLayout>
+
 
 
     <View
+        android:layout_above="@+id/bottom_linear"
+        android:layout_below="@+id/bottom_linear"
+        android:id="@+id/activity_orderchart_view_line3"
         android:layout_width="wrap_content"
         android:layout_height="0.2dp"
         android:background="@color/colorGrey2"/>
     <LinearLayout
+        android:id="@+id/bottom_linear"
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -157,4 +162,4 @@
     </LinearLayout>
 
 
-</LinearLayout>
+</RelativeLayout>

@@ -10,6 +10,7 @@ import com.example.yogiyo_project.src.FoodCategory.models.FoodCategory1Response;
 import com.example.yogiyo_project.src.myinfopage.inferfaces.MyInfoPageActivityView;
 import com.example.yogiyo_project.src.myinfopage.inferfaces.MyInfoPageRetrofitInterface;
 import com.example.yogiyo_project.src.myinfopage.models.MyInfoPageResponse;
+import com.example.yogiyo_project.src.myinfopage.models.WithdrwalResponse;
 import com.example.yogiyo_project.src.selectedStore.Interfaces.SelectStoreRetrofitInterface;
 import com.example.yogiyo_project.src.selectedStore.models.SelectStoreResponse;
 
@@ -50,6 +51,28 @@ public class MyInfoPageService {
 
             @Override
             public void onFailure(Call<MyInfoPageResponse> call, Throwable t) {
+                mMyInfoPageActivityView.validateFailure(null);
+            }
+        });
+    }
+
+    void getWithDrwal() {  //서버통신부분
+        final MyInfoPageRetrofitInterface myInfoRetrofitInterface = getRetrofit4().create(MyInfoPageRetrofitInterface.class);
+        myInfoRetrofitInterface.getWithDrwal().enqueue(new Callback<WithdrwalResponse>() {  //비동기 호출
+            @Override
+            public void onResponse(Call<WithdrwalResponse> call, Response<WithdrwalResponse> response) {
+                final WithdrwalResponse withdrwalResponse = response.body(); //response = 서버에서 api통신을 통해 얻은 json..?
+                if (withdrwalResponse == null) {
+                    System.out.println("reponse null");
+                    mMyInfoPageActivityView.validateFailure(null);  //아직 view가 호출되지 않았는데 함수가 더 빨리 실행되서 오류가 나오는 등 상황 발생할 수 있다
+                    return;   //MainActivity의 validateFailure 호출된다
+                }
+
+                mMyInfoPageActivityView.WithdrwalSuccess(withdrwalResponse.withDrwalMessage);
+            }
+
+            @Override
+            public void onFailure(Call<WithdrwalResponse> call, Throwable t) {
                 mMyInfoPageActivityView.validateFailure(null);
             }
         });

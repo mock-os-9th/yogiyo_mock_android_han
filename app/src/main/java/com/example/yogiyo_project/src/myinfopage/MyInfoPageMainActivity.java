@@ -57,6 +57,16 @@ public class MyInfoPageMainActivity extends BaseActivity implements MyInfoPageAc
                 onBackPressed(); //마이요기요 프래그먼트로 복귀
             }
         });
+        mTvMyInfoWithdrawal = findViewById(R.id.activity_myinfopage_tv_withdrawal);
+        mTvMyInfoWithdrawal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ApplicationClass.LOGIN_STATE = false;
+                tryGetWithDrwal();
+                MyYogiyoFragment.MyYogiyoFragmentUIChangeAsLogIn();
+
+            }
+        });
 
         tryGetMyInfo();
     }
@@ -83,10 +93,23 @@ public class MyInfoPageMainActivity extends BaseActivity implements MyInfoPageAc
         mTvMyInfoPhoneNum.setText("0"+phoneNum);
     }
 
+    @Override
+    public void WithdrwalSuccess(String message) {
+        hideProgressDialog();
+        showCustomToast("회원탈퇴 하였습니다");
+    }
+
     private void tryGetMyInfo() {
         showProgressDialog();  //로딩시작!  // 서버통신전에 로딩을 띄워주는것
         System.out.println("로딩시작");
         final MyInfoPageService myInfoPageService = new MyInfoPageService(this);
         myInfoPageService.getMyInfo();
+    }
+
+    private void tryGetWithDrwal() {
+        showProgressDialog();  //로딩시작!  // 서버통신전에 로딩을 띄워주는것
+        System.out.println("로딩시작");
+        final MyInfoPageService myInfoPageService = new MyInfoPageService(this);
+        myInfoPageService.getWithDrwal();
     }
 }

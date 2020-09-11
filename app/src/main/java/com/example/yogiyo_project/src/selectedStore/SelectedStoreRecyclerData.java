@@ -6,4 +6,5 @@ public class SelectedStoreRecyclerData {
     public ImageView menuImage;
     public String menuName;
     public String menuPrice;
+    public int menuIdx;
 }

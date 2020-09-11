@@ -46,6 +46,8 @@
             android:screenOrientation="portrait"></activity>
         <activity android:name=".src.orderchart.OrderChartMainActivity"
             android:screenOrientation="portrait"></activity>
+        <activity android:name=".src.ordercomplete.OrderCompleteMainActivity"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

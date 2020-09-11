@@ -149,6 +149,7 @@
                        android:textColor="@color/colorRed2"
                        android:textSize="16dp"/>
                    <TextView
+                       android:id="@+id/fragment_myyogiyo_tv_nickName"
                        android:layout_width="wrap_content"
                        android:layout_height="wrap_content"
                        android:text="닉네임을 설정해주세요."

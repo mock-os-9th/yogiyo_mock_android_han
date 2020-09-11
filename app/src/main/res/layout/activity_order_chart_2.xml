@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_marginBottom="1dp"
+        android:id="@+id/activity_orderchart_2_relativelayout_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/colorWhite"
+        >
+        <ImageView
+            android:id="@+id/activity_orderchart_iv_2_back"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_gravity="center_vertical|end"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_baseline_arrow_back_ios_24"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:id="@+id/activity_orderchart_tv_2_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@color/colorBlack"
+            android:textSize="21dp"
+            android:text="주문표"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"/>
+
+        <ImageView
+            android:id="@+id/activity_orderchart_2_iv_trashcan"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentRight="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/trash_can"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"/>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:background="@color/colorGrey1"/>
+    <TextView
+        android:id="@+id/activity_orderchart_2_tv_storename"
+        android:layout_below="@+id/activity_orderchart_view_line1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="10dp"
+        android:text="가게 이름"
+        android:textColor="@color/colorBlack1"
+        android:textSize="19dp"/>
+
+    <View
+        android:id="@+id/activity_orderchart_2_view_line2"
+        android:layout_below="@id/activity_orderchart_tv_storename"
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:background="@color/colorGrey1"
+        android:layout_marginTop="22dp"/>
+
+    <ListView
+        android:id="@+id/activity_orderchart_2_lv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:background="@color/colorGrey3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="10dp"
+            android:paddingVertical="15dp">
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="배달요금"
+                android:textColor="@color/colorBlack1" />
+            <TextView
+                android:id="@+id/order_chart_2_deliverycharge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2000원"
+                android:textColor="@color/colorBlack1"/>
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.2dp"
+            android:background="@color/colorGrey2"
+            android:layout_marginHorizontal="10dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="10dp"
+            android:paddingVertical="15dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="합계"
+                android:textColor="@color/colorBlack1"/>
+            <TextView
+                android:id="@+id/order_chart_2_totalprice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10000원"
+                android:textColor="@color/colorRed"
+                android:textSize="22dp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottom_linear"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingVertical="10dp">
+        <TextView
+            android:id="@+id/activity_orderchart_tv_addmenu"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="메뉴 추가"
+            android:textColor="@color/colorBlack1"
+            android:background="@drawable/view_outline1"
+            android:gravity="center_horizontal"
+            android:layout_marginHorizontal="10dp"
+            android:paddingVertical="8dp"
+            android:textSize="20dp"/>
+        <TextView
+            android:id="@+id/activity_orderchart_2_tv_gotopay"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="주문하기"
+            android:background="@color/colorRed"
+            android:textColor="@color/colorWhite"
+            android:gravity="center_horizontal"
+            android:layout_marginHorizontal="10dp"
+            android:paddingVertical="8dp"
+            android:textSize="20dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

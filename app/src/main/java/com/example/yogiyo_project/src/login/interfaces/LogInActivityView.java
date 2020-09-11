@@ -8,4 +8,6 @@ public interface LogInActivityView {
     void validateFailure(String message);
 
     void logInSuccess(String message, LogInResponse.LogInResult logInResult);
+
+    void myinfoSuccess(String message);
 }

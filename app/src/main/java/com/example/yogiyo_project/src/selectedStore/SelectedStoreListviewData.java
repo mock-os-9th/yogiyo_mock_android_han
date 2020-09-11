@@ -8,5 +8,6 @@ public class SelectedStoreListviewData {
     public String menuInfo;
     public String menuPrice;
     public int menuImageDrawable;
+    public int menuIdx;
 
 }

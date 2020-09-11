@@ -4,4 +4,7 @@ public class OrderChartListViewData {
     public String menuName;
     public String menuPrice;
     public String menuCount;
+    public int cartIdx;
+    public int cartMenuIdx;
+
 }

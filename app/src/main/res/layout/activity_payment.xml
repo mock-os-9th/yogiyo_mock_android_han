@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_marginBottom="1dp"
+        android:id="@+id/activity_payment_relativelayout_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/colorWhite"
+        >
+
+
+        <ImageView
+            android:id="@+id/activity_payment_iv_back"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_gravity="center_vertical|end"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_baseline_arrow_back_ios_24"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:id="@+id/activity_payment_tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@color/colorBlack"
+            android:textSize="21dp"
+            android:text="배달 주문 결제"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/activity_payment_view_line1"
+        android:layout_width="match_parent"
+        android:layout_height="0.4dp"
+        android:background="@color/colorGrey1"
+        android:layout_below="@id/activity_payment_relativelayout_top_bar"/>
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/activity_payment_view_line1">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/activity_payment_linear1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/payment_1"
+            android:scaleType="fitXY"
+            android:layout_gravity="center_vertical"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="주문자 정보"
+            android:textColor="@color/colorBlack1"
+            android:textStyle="bold"
+            android:textSize="21dp"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/view_outline1"
+            android:text="주소변경"
+            android:textSize="15dp"
+            android:layout_marginRight="15dp"
+            android:textColor="@color/colorBlack1"
+            android:paddingVertical="3dp"
+            android:paddingHorizontal="5dp"
+            android:layout_gravity="center_vertical"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_marginTop="17dp"
+        android:id="@+id/activity_payment_mainaddress"
+        android:layout_below="@+id/activity_payment_linear1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="경기도 성남시 분당구 정자동 192"
+        android:layout_marginLeft="15dp"
+        android:textColor="@color/colorBlack1"
+        android:textSize="19dp"
+        />
+
+    <TextView
+        android:layout_marginTop="3dp"
+        android:id="@+id/activity_payment_tv_1"
+        android:layout_below="@+id/activity_payment_mainaddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:text="[도로명]"/>
+
+    <TextView
+        android:id="@+id/activity_payment_tv_roadaddress"
+        android:layout_marginTop="3dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="정자로 112 정든마을 신화5단지아파트"
+        android:layout_toRightOf="@+id/activity_payment_tv_1"
+        android:layout_below="@+id/activity_payment_mainaddress"
+        android:layout_marginLeft="4dp"/>
+    <TextView
+    android:id="@+id/activity_payment_tv_detailaddress"
+    android:layout_below="@+id/activity_payment_tv_1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:background="@drawable/view_outline1"
+    android:text="501동 504호"
+    android:textSize="17dp"
+    android:textColor="@color/colorBlack1"
+    android:paddingVertical="13dp"
+    android:layout_marginHorizontal="15dp"
+    android:paddingLeft="15dp"/>
+
+    <EditText
+        android:id="@+id/activity_payment_et_phonenum"
+        android:layout_below="@+id/activity_payment_tv_detailaddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/view_outline1"
+        android:hint="휴대전화번호를 입력하세요"
+        android:textSize="17dp"
+        android:textColor="@color/colorBlack1"
+        android:paddingVertical="13dp"
+        android:layout_marginHorizontal="15dp"
+        android:paddingLeft="15dp"/>
+
+    <LinearLayout
+        android:id="@+id/activity_payment_linear2"
+        android:layout_below="@+id/activity_payment_et_phonenum"
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="8dp">
+        <CheckBox
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:scaleY="1.0"
+            android:scaleX="1.0"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="안심번호 사용"
+            android:textColor="@color/colorBlack1"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/activity_payment_tv_2"
+        android:layout_below="@+id/activity_payment_linear2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="주문 요청사항"
+        android:layout_marginLeft="15dp"
+        android:textSize="17dp"
+        android:textColor="@color/colorBlack1"
+        android:layout_marginTop="15dp"
+        android:textStyle="bold"/>
+
+    <LinearLayout
+        android:id="@+id/activity_payment_linear3"
+        android:layout_below="@+id/activity_payment_tv_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/colorGrey3"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="10dp"
+        android:paddingVertical="7dp">
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="[안전배달] 문 앞에 놓고, 전화주세요!"
+            android:textColor="@color/colorBlack1"
+            android:textStyle="bold"
+            android:textSize="16dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/activity_payment_linear4"
+        android:layout_below="@+id/activity_payment_linear3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/colorGrey3"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="10dp"
+        android:paddingVertical="7dp">
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="일회용 수저, 젓가락은 안 쓸게요!"
+            android:textColor="@color/colorBlack1"
+            android:textStyle="bold"
+            android:textSize="16dp"/>
+            <TextView
+                android:layout_marginTop="2dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="꼭 필요하지 않다면 체크해 주세요. 일회용품 줄이기\n어렵지 않아요"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:id="@+id/activity_payment_linear5"
+        android:layout_below="@+id/activity_payment_linear4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="15dp"
+        android:padding="10dp"
+        android:background="@drawable/view_outline0">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="요청사항을 선택하세요."
+            android:textSize="16.5dp"
+            android:textColor="@color/colorBlack1"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_selected_store_menu_listview_open"/>
+    </LinearLayout>
+
+            <View
+                android:id="@+id/activity_payment_view_space1"
+                android:layout_below="@+id/activity_payment_linear5"
+                android:layout_marginTop="25dp"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:background="@color/colorGrey3"/>
+
+            <LinearLayout
+                android:id="@+id/activity_payment_linear6"
+                android:layout_below="@+id/activity_payment_view_space1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:src="@drawable/payment_2"
+                    android:scaleType="fitXY"
+                    android:layout_gravity="center_vertical"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="결제 수단 선택"
+                    android:textColor="@color/colorBlack1"
+                    android:textStyle="bold"
+                    android:textSize="21dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+
+            <RadioGroup
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="10dp"
+                android:id="@+id/activity_payment_radiogroup"
+                android:layout_below="@+id/activity_payment_linear6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <RadioButton
+                    android:id="@+id/activity_payment_rb_1sec"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16.5dp"
+                    android:text="요기서 1초 결제"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.2dp"
+                    android:background="@color/colorGrey2"/>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <RadioButton
+                        android:id="@+id/activity_payment_rb_yogiseo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16.5dp"
+                        android:text="요기서결제"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="앱에서 미리 결제"
+                        android:layout_marginLeft="15dp"
+                        />
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.2dp"
+                    android:background="@color/colorGrey2"/>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                <RadioButton
+                    android:id="@+id/activity_payment_rb_direct"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16.5dp"
+                    android:text="현장결제"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="음식받고 직접 결제"
+                    android:layout_marginLeft="15dp"
+                    />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/activity_payment_linear_directpay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="10dp"
+                   >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/colorGrey3"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="15dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorBlack1"
+                            android:text="코로나19 예방을 위해 비대면 배달 권장드립니다."/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorBlack1"
+                            android:layout_marginTop="5dp"
+                            android:text="요기서 결제 선택 후,&quot;문 앞 배달&quot;을 요청사항에 남겨주세요."/>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp">
+                        <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                            android:layout_weight="1"
+                            android:background="@drawable/view_outline0"
+                            android:gravity="center"
+                            android:paddingVertical="10dp">
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_baseline_credit_card_24"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="신용카드"
+                            android:textColor="@color/colorBlack1"/>
+                    </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:background="@drawable/view_outline0"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:paddingVertical="10dp"
+                            android:layout_marginLeft="10dp"
+                            >
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_baseline_dollar"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="현금결제"
+                                android:textColor="@color/colorBlack1"/>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </RadioGroup>
+
+            <LinearLayout
+                android:layout_marginTop="15dp"
+                android:id="@+id/activity_payment_linear7"
+                android:layout_below="@id/activity_payment_radiogroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/colorGrey3"
+                android:paddingVertical="10dp"
+                android:layout_marginHorizontal="15dp">
+                <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="요기서혜택"
+                    android:textColor="@color/colorRed2"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="차이페이로 결제하면 누구나 5% 할인"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="마이 신한포인트 주문금액 100%까지 사용가능"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="NH 포인트 주문금액 100%까지 사용가능"/>
+            </LinearLayout>
+
+            <View
+                android:id="@+id/activity_payment_view_space2"
+                android:layout_below="@+id/activity_payment_linear7"
+                android:layout_marginTop="25dp"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:background="@color/colorGrey3"/>
+
+            <LinearLayout
+                android:id="@+id/activity_payment_linear8"
+                android:layout_below="@+id/activity_payment_view_space2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:src="@drawable/payment_3"
+                    android:scaleType="fitXY"
+                    android:layout_gravity="center_vertical"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="할인 방법 선택"
+                    android:textColor="@color/colorBlack1"
+                    android:textStyle="bold"
+                    android:textSize="21dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="15dp"
+                android:id="@+id/activity_payment_tv_3"
+                android:layout_below="@+id/activity_payment_linear8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorRed"
+                android:text="현장결제 시 쿠폰/포인트/슈퍼클럽 할인을 받으실 수\n없습니다."/>
+
+            <View
+                android:layout_marginTop="20dp"
+                android:id="@+id/activity_payment_view_space3"
+                android:layout_below="@+id/activity_payment_tv_3"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:background="@color/colorGrey3"
+                />
+
+            <TextView
+                android:id="@+id/activity_payment_tv_4"
+                android:layout_below="@+id/activity_payment_view_space3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"
+                android:text="배달 주문 내역"
+                android:textStyle="bold"
+                android:textColor="@color/colorBlack1"
+                android:textSize="19dp"/>
+
+         <LinearLayout
+             android:layout_marginTop="30dp"
+             android:id="@+id/activity_payment_linear9"
+             android:layout_below="@+id/activity_payment_tv_4"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="horizontal">
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_weight="1"
+                 android:text="결제 금액"
+                 android:layout_marginLeft="15dp"
+                 android:textColor="@color/colorRed"
+                 android:textSize="17dp"
+                 android:layout_marginRight="10dp"/>
+             <TextView
+                 android:id="@+id/total_cost"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:textColor="@color/colorRed"
+                 android:textSize="20dp"
+                 android:text="00000"/>
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:textColor="@color/colorRed"
+                 android:textSize="20dp"
+                 android:text="원"
+                 />
+         </LinearLayout>
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:id="@+id/activity_payment_tv_5"
+                android:layout_below="@+id/activity_payment_linear9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="개인정보 제3자 제공 내용 확인하였으며 결제에 동의합니다."
+                android:background="@color/colorGrey3"
+                android:textColor="@color/colorBlack1"
+                android:paddingVertical="10dp"
+                />
+
+            <TextView
+                android:layout_marginTop="25dp"
+                android:layout_below="@+id/activity_payment_tv_5"
+                android:id="@+id/activity_payment_tv_ordercomplete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="주문완료"
+                android:gravity="center"
+                android:textColor="@color/colorWhite"
+                android:background="@color/colorRed"
+                android:layout_marginHorizontal="15dp"
+                android:paddingVertical="10dp"
+                android:textSize="17dp"
+                android:layout_marginBottom="40dp"/>
+
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

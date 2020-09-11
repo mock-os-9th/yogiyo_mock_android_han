@@ -201,7 +201,10 @@ public class HomeFragment extends Fragment {
             mRlAfterChooseAddress.setVisibility(View.VISIBLE);
 
             if(ApplicationClass.PICK_MENU) {
-                mIvGoToOrderChart.setVisibility(View.VISIBLE);
+                mIvGoToOrderChart.setVisibility(View.VISIBLE);  // 주문표에 메뉴 담길 시 버튼 보임
+            }
+            if(!ApplicationClass.PICK_MENU){
+                mIvGoToOrderChart.setVisibility(View.INVISIBLE);  // 주문표에 메뉴 없으면 버튼 안보임
             }
         }
     }

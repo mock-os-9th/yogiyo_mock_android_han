@@ -73,7 +73,7 @@ public class FoodCategoryListViewAdapter extends BaseAdapter {
         view.setOnClickListener(new View.OnClickListener() {  // 가게 리스트에서 클릭 시 해당 가게 정보 액티비티로 갈 수 있게하기
             @Override
             public void onClick(View view) {
-                ApplicationClass.STORE_IDX = data.storeIdx;  //선택한 가게 번호를 넣어준다
+                ApplicationClass.STORE_IDX = data.storeIdx;  //선택한 가게 번호를 넣어준다  //최초로 STORE_IDX 값 들어간다
                 Toast.makeText(view.getContext(),"cesco: "+data.cesco+" "+ApplicationClass.STORE_IDX ,Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(view.getContext(), SelectedStoreMainActivity.class);

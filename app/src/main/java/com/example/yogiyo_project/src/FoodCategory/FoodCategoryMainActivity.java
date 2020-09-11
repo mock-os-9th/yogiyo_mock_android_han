@@ -94,7 +94,7 @@ public class FoodCategoryMainActivity extends BaseActivity implements FoodCatego
     private void tryGetFoodList(){
         showProgressDialog();
         final FoodCategoryMainService foodCategoryMainService = new FoodCategoryMainService(this);
-        foodCategoryMainService.getFoodList(37.2, 10.1);  //위,경도 값 보내줘야함
+        foodCategoryMainService.getFoodList(37.205, 10.001);  //위,경도 값 보내줘야함
 
     }
 

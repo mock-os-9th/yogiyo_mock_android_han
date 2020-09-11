@@ -348,7 +348,7 @@
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/selected_stroe_viewpager"
             android:layout_width="match_parent"
-            android:layout_height="1100dp"
+            android:layout_height="1500dp"
             android:layout_below="@+id/selected_stroe_tablayout"
             android:layout_marginTop="10dp"
             >

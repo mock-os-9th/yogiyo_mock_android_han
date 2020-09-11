@@ -52,6 +52,7 @@
                     android:id="@+id/selected_store_listview_popular"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+
                     />
                 <View
                     android:layout_width="match_parent"
@@ -136,8 +137,49 @@
                     android:layout_height="7dp"
                     android:background="@color/colorGrey3"/>
 
+            <LinearLayout
+                android:id="@+id/selected_store_linearlayout_menucategory3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingVertical="12dp">
+
+                <TextView
+                    android:id="@+id/selected_store_tv_menucategory3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="메뉴 카테고리3"
+                    android:textColor="@color/colorBlack1"
+                    android:textSize="20dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_weight="1"/>
+                <ImageView
+                    android:id="@+id/selected_store_iv_listview_menucategory3_close"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_baseline_selected_store_menu_listview_open"
+                    android:layout_marginRight="10dp"/>
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:background="@color/colorGrey1"/>
+
+            <ListView
+                android:id="@+id/selected_store_listview_menucategory3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="7dp"
+                android:background="@color/colorGrey3"/>
+
 
         </LinearLayout>
+
+
 
 
 </FrameLayout>

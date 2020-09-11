@@ -30,6 +30,7 @@ public class MyYogiyoFragment extends Fragment {
     static TextView mTvCoupon;
     static TextView mTvPoint;
     static TextView mTvReview;
+    static TextView mTvNickName;
 
     static RelativeLayout mRlBeforeLoginInfo;
     static RelativeLayout mRlAfterLoginInfo;
@@ -67,10 +68,11 @@ public class MyYogiyoFragment extends Fragment {
         // 슈퍼클럽 광고 그림 로그인 전후로 다르므로 설정
         mIvSuperclubAdBeforeLogin = mView.findViewById(R.id.fragment_yogiyo_iv_superclub_ad_beforelogin);
         mIvSuperclubAdAfterLogin = mView.findViewById(R.id.fragment_yogiyo_iv_superclub_ad_afterlogin);
-        // 쿠폰함, 포인트, 리뷰관리 텍스트뷰
+        // 쿠폰함, 포인트, 리뷰관리, 닉네임 텍스트뷰
         mTvCoupon = mView.findViewById(R.id.fragment_myyogiyo_tv_coupon);
         mTvPoint = mView.findViewById(R.id.fragment_myyogiyo_tv_point);
         mTvReview = mView.findViewById(R.id.fragment_myyogiyo_tv_review);
+        mTvNickName = mView.findViewById(R.id.fragment_myyogiyo_tv_nickName);
         //상단 로그인 정보 relativelayout
         mRlBeforeLoginInfo = mView.findViewById(R.id.fragment_myyogiyo_relativelayout_beforelogin);
         mRlAfterLoginInfo = mView.findViewById(R.id.fragment_myyogiyo_relativelayout_afterlogin);
@@ -90,6 +92,13 @@ public class MyYogiyoFragment extends Fragment {
         return mView;
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        System.out.println("MyYogiyo fragment onResume");
+        MyYogiyoFragmentUIChangeAsLogIn();
+    }
+
     public static void MyYogiyoFragmentUIChangeAsLogIn(){
         if(ApplicationClass.LOGIN_STATE){
             mIvSuperclubAdBeforeLogin.setVisibility(View.GONE);
@@ -97,6 +106,12 @@ public class MyYogiyoFragment extends Fragment {
 
             mRlBeforeLoginInfo.setVisibility(View.GONE);
             mRlAfterLoginInfo.setVisibility(View.VISIBLE);
+
+            mTvCoupon.setText(String.valueOf(ApplicationClass.INFO_couponCnt));
+            mTvPoint.setText(String.valueOf(ApplicationClass.INFO_leftPoint));
+            mTvReview.setText(String.valueOf(ApplicationClass.INFO_reviewCnt));
+            mTvNickName.setText(ApplicationClass.INFO_nickName);
+
         }
         else{
             mIvSuperclubAdBeforeLogin.setVisibility(View.VISIBLE);
@@ -104,6 +119,12 @@ public class MyYogiyoFragment extends Fragment {
 
             mRlBeforeLoginInfo.setVisibility(View.VISIBLE);
             mRlAfterLoginInfo.setVisibility(View.GONE);
+
+            mTvCoupon.setText("-");
+            mTvPoint.setText("-");
+            mTvReview.setText("0");
+            mTvNickName.setText("닉네임을 설정해주세요.");
+
         }
     }
 }

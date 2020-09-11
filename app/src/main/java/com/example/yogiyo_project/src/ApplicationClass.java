@@ -25,9 +25,11 @@ public class ApplicationClass extends Application {
 
     // 테스트 서버 주소
     public static String BASE_URL = "http://52.78.11.153/";     //필요한 여러 값들을 저장하는 클래스이다 / 다른 클래스에서 자유자재로 사용가능한 static 변수들
-    public static String BASE_URL_2 = "https://yogiyo.shop/"; //엘리님 테스트 서버 주소 / 회원가입 / 로그인
+    public static String BASE_URL_TEST = "https://yogiyo.shop/"; //엘리님 테스트 서버 주소 / 회원가입 / 로그인
     public static String BASE_URL_CATEGORY = "https://minzzu.shop/"; //엘리님 테스트 서버 주소 / 주소 입력 후 카테고리별 가게 조회/
     public static String BASE_URL_TORY = "http://3.34.178.226/"; //토리님 테스트 서버 주소 / 특정가게 정보 조회 /
+
+    public static String BASE_URL_TES = "https://minzzu.shop/";
 
     public static String KAKAO_BASE_URL = "https://dapi.kakao.com/"; // 카카오톡 주소 api
     // 실서버 주소
@@ -80,13 +82,14 @@ public class ApplicationClass extends Application {
     public static String MENU_NAME;  //해당 메뉴 이름
     public static String MENU_INFO;  //해당 메뉴 정보
     public static String MENU_PRICE; //해당 메뉴 가격
+    public static int MENU_IDX = 1; //해당 메뉴 번호
     public static int MENU_IAMGE; // 해당 메뉴 이미지 리소스
 
     //특정 메뉴 주문표에 담을 시
     public static boolean PICK_MENU = false; // 아무것도 선택하기 전에는 false
 
     //특정 메뉴 주문표에 담기 위한 리스트
-    public static ArrayList<OrderChartListViewData> mOrderChartDataList = new ArrayList<>();
+   public static ArrayList<OrderChartListViewData> mOrderChartDataList = new ArrayList<>();
 
     //가게 리스트에서 선택 시 전달 할 가게 번호
     public static int STORE_IDX = 1;   //int형임!
@@ -102,6 +105,19 @@ public class ApplicationClass extends Application {
     public static int STORE_menuCnt = 0; //메뉴 수
     public static int STORE_reviewCnt = 0; //리뷰수
     public static double STORE_totalScore = 0; //평점
+
+    public static int INFO_couponCnt = 0;
+    public static int INFO_reviewCnt = 0;
+    public static int INFO_leftPoint = 0;
+    public static String INFO_nickName = null;
+
+    public static int menuCategoryIdx1;
+    public static int menuCategoryIdx2;
+    public static int menuCategoryIdx3;
+
+    //현재 주문 표에 담긴 메뉴들 총 가격
+    public static int TOTAL_COST;
+
 
 
 
@@ -142,7 +158,7 @@ public class ApplicationClass extends Application {
                     .build();
 
             retrofit2 = new Retrofit.Builder()
-                    .baseUrl(BASE_URL_TORY)
+                    .baseUrl(BASE_URL_TEST)
                     .client(client)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
@@ -159,7 +175,7 @@ public class ApplicationClass extends Application {
                     .build();
 
             retrofit3 = new Retrofit.Builder()
-                    .baseUrl(BASE_URL_CATEGORY)
+                    .baseUrl(BASE_URL_TEST)
                     .client(client)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
@@ -177,7 +193,7 @@ public class ApplicationClass extends Application {
                     .build();
 
             retrofit4 = new Retrofit.Builder()
-                    .baseUrl(BASE_URL_TORY)
+                    .baseUrl(BASE_URL_TEST)
                     .client(client)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();

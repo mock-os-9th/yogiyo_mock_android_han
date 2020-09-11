@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.InputType;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
@@ -42,7 +43,8 @@ public class LogInMainActivity extends BaseActivity implements LogInActivityView
         mTvActivityLoginLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tryPostLogIn();
+                tryPostLogIn(); //로그인하기
+
             }
         });
 
@@ -63,8 +65,11 @@ public class LogInMainActivity extends BaseActivity implements LogInActivityView
             }
         });
 
+
+
         mEtActivityLoginEmail = findViewById(R.id.activity_login_tv_input_email);
         mEtActivityLoginPassWord = findViewById(R.id.activity_login_tv_input_password);  //이메일, 비밀번호 모두 (공백x)입력 감지시 로그인 버튼 색상 변경
+        mEtActivityLoginPassWord.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);//비밀번호 안보이게 처리
         mEtActivityLoginEmail.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -139,6 +144,13 @@ public class LogInMainActivity extends BaseActivity implements LogInActivityView
                 mEtActivityLoginPassWord.getText().toString());     //MainService 객체 생성 시 생성자에 this를 넣는다(MainActivity자신) -> MainActivityView를 구현했으므로 가능
     }
 
+    private void tryGetMy() {
+        showProgressDialog();  //로딩시작!  // 서버통신전에 로딩을 띄워주는것
+
+        final LogInMainService logInmainService = new LogInMainService(this);
+        logInmainService.getMyInfo();
+    }
+
     @Override
     public void validateSuccess(String text) {
 
@@ -146,7 +158,7 @@ public class LogInMainActivity extends BaseActivity implements LogInActivityView
 
     @Override
     public void validateFailure(String message) {
-
+        hideProgressDialog();
     }
 
     @Override
@@ -161,12 +173,18 @@ public class LogInMainActivity extends BaseActivity implements LogInActivityView
         System.out.println("로그인 성공");
         System.out.println(sSharedPreferences.getString(X_ACCESS_TOKEN, null));
 
-        ApplicationClass.LOGIN_STATE = true;
-        MyYogiyoFragment.MyYogiyoFragmentUIChangeAsLogIn();
 
+        ApplicationClass.LOGIN_STATE = true;
+        tryGetMy();// 정보 가져오기
+
+        MyYogiyoFragment.MyYogiyoFragmentUIChangeAsLogIn();
         onBackPressed();
 
 
+    }
 
+    @Override
+    public void myinfoSuccess(String message) {
+        hideProgressDialog();
     }
 }
